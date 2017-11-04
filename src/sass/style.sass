@@ -1,0 +1,114 @@
+@import ./lib/mixins
+@import ./lib/reset
+@import ./lib/svgfont
+
++font('Quasimoda', 'Quasimoda-Regular', 400)
++font('Quasimoda', 'Quasimoda-Italic', 400, italic)
++font('Quasimoda', 'Quasimoda-Bold', 700)
++font('Quasimoda', 'Quasimoda-BoldItalic', 700, italic)
++font('TenorSans', 'TenorSans', 400)
+
+=tenor
+  font-family: 'TenorSans'
+
+$primary-color: #c2b179
+$primary-text-color: #c0b07c
+$primary-text-2-color: #c4b277
+
+$text-color: #646363
+$text-dark-color: #3d3d3d
+
+$text-size: 14px
+$text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+
+=mobile
+  +rm(320)
+    @content
+
+=tablet
+  +rm(768)
+    @content
+
+=descop
+  +rm(1024)
+    @content
+
+.pixel-perfect
+  background-position: 0 0
+  background-repeat: no-repeat
+  opacity: 0.4
+  left: 0
+  top: 0
+  width: 1600px
+  height: 1912px
+  min-height: 100%
+  position: absolute
+  pointer-events: none
+  z-index: 1000
+
+body
+  font: $text-font
+  color: $text-color
+  width: 1600px
+
+=gradient-text
+  // color: $primary-color
+  background:  linear-gradient(90deg, #c0b07c 0%, #c6b373 50%, #ccb56b 100%)
+  // , -webkit-linear-gradient(60deg, #ffecac, #c4b277)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+=gradient-text-simple
+  color: $primary-text-color
+  background:  linear-gradient(90deg, #c0b07c 0%, #c6b373 50%, #ccb56b 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+
+
+@import ./components/header
+@import ./components/slider
+@import ./components/footer
+
+.text-title
+  +gradient-text-simple
+  +tenor
+  font-size: 22px
+  letter-spacing: 0.61px
+  text-align: center
+
+.index-block
+  display: block
+  padding: 0 133px 100px
+
+  &__header
+    padding: 80px 0
+    text-align: center
+
+    .text-title
+      margin-bottom: 10px
+  &__gallery
+
+.index-gallery
+  display: inline-block
+  text-align: center
+  &__item
+    display: inline-block
+    position: relative
+
+    img
+      width: 657px
+      height: 657px
+
+    & + &
+      margin-left: 20px
+
+    .text
+      position: absolute
+      bottom: 32px
+      left: 32px
+      right: 32px
+      font-size: 12px
+      text-transform: uppercase
+      color: $text-dark-color
+      text-align: left

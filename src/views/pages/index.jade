@@ -1,0 +1,20 @@
+extends ../layouts/main
+
+block variables
+  - var designName = '1.0 Main — Klodt.png'
+block content
+  include ../partials/header
+  include ../partials/slider
+  
+  article.index-block
+    .index-block__header
+      .text-title Survey Shows Two Thirds Of Migraine Sufferers Dissatisfied
+      p Survey Shows Two Thirds Of Migraine Sufferers Dissatisfied
+    .index-block__gallery.index-gallery
+      a.index-gallery__item(href="#item-1")
+        img(src="/img/products/meissa.png", alt="Meissa")
+        .text Meissa
+      a.index-gallery__item(href="#item-1")
+        img(src="/img/products/metallah.png", alt="Metallah")
+        .text Metallah
+  include ../partials/footer

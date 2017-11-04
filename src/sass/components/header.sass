@@ -1,0 +1,59 @@
+
+.header
+  text-align: center
+  overflow: hidden
+  padding: 16px 0 15px
+  position: relative
+  background-color: white
+  line-height: 0
+
+.nav
+  display: inline-block
+
+  &__left,
+  &__right
+    display: block
+    line-height: 1.7
+
+  +tablet
+    &__left,
+    &__right
+      position: absolute
+      width: 50%
+      top: 16px
+    &__left
+      right: 50%
+      text-align: right
+      padding-right: 45px
+      margin-right: 40px
+    &__right
+      left: 50%
+      text-align: left
+      padding-left: 45px
+      margin-left: 40px
+
+
+  &__item
+    display: block
+    padding: 0 45px
+    vertical-align: top
+    font-size: 12px
+    color: $text-dark-color
+    text-transform: uppercase
+    margin-top: 14px
+    letter-spacing: 0.86px
+
+    +tablet
+      display: inline-block
+
+    &_active
+      color: $primary-color
+  &__logo
+    font-size: 0
+    line-height: 0
+
+    &, a
+      display: inline-block
+    img
+      width: 80px
+      height: 49px
