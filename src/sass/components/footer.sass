@@ -1,18 +1,22 @@
 
 .footer
-  padding: 0 133px
+  +maxTablet
+    padding: 0 25px
+  +minTablet
+    padding: 0 133px
 
   &__in
     border-top: 1px solid #c4b176
-    padding: 50px 0 80px
+
+    +maxTablet
+      padding-bottom: 35px
+    +minTablet
+      padding: 50px 0 80px
 
   .footer__in
     text-align: center
 
-  .footer-contacts
-    margin-top: 20px
-
-  +tablet
+  +minTablet
     .footer__in
       display: table
       width: 100%
@@ -27,11 +31,13 @@
 
 .footer-socials
   display: block
-  text-align: center
-  margin-left: -40px
 
-  +tablet
+  +maxTablet
+    text-align: center
+
+  +minTablet
     text-align: left
+    margin-left: -40px
 
     .footer-socials__item:first-child
       margin-left: 0
@@ -41,11 +47,16 @@
     font-size: 12px
     color: $text-dark-color
     white-space: nowrap
-    margin-left: 40px
-    margin-top: 10px
+    text-decoration: underline
 
-    +tablet
+    +maxTablet
+      width: 100%
+      margin-top: 36px
+
+    +minTablet
       margin-top: 0
+      margin-left: 40px
+      margin-top: 10px
 
     .icon
       vertical-align: middle
@@ -61,9 +72,6 @@
   font-size: 12px
   color: $text-dark-color
   text-align: center
-
-  +tablet
-    margin-left: -40px
 
   a
     color: inherit
@@ -82,12 +90,10 @@
   .heart
     white-space: nowrap
     display: block
-    margin-top: 10px
 
-    +tablet
+    +maxTablet
+      margin-top: 36px
+
+    +minTablet
       display: inline-block
-      margin-top: 0
       margin-left: 40px
-
-  +tablet
-    text-align: left

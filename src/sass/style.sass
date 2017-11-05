@@ -25,7 +25,7 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   +r(320)
     @content
 
-=mobile
+=minMobile
   +rm(320)
     @content
 
@@ -33,7 +33,7 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   +r(768)
     @content
 
-=tablet
+=minTablet
   +rm(769)
     @content
 
@@ -41,7 +41,7 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   +r(1024)
     @content
 
-=descop
+=minDescop
   +rm(1025)
     @content
 
@@ -71,6 +71,8 @@ body
 
 .disable-scroll
   overflow: hidden
+  width: 100%
+  height: 100%
 
 =gradient-text
   // color: $primary-color
@@ -96,10 +98,13 @@ body
   +gradient-text-simple
   +tenor
 
-  font-size: 18px
-
-  +tablet
+  +maxTablet
+    color: #c0b07c
+    font-size: 20px
+    line-height: 24px
+  +minTablet
     font-size: 22px
+
   letter-spacing: 0.61px
   text-transform: uppercase
   text-align: center

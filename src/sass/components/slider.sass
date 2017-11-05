@@ -24,6 +24,10 @@
       border-radius: 50%
       background: white
 
+      +maxTablet
+        width: 5px
+        height: 5px
+
       &.active
         background: #c7b374
 
@@ -41,6 +45,7 @@
   // 80px - height of header
   height: calc(100vh - 80px)
   max-height: 700px
+  min-height: 500px
   background-size: cover
   background-repeat: no-repeat
   background-position: 0 0
@@ -60,7 +65,7 @@
     text-align: justify
     +gradient-text
 
-    +tablet
+    +minTablet
       margin-top: -15px
       font-size: 38px
 

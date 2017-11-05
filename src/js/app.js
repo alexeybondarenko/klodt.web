@@ -7,7 +7,7 @@ $(document).ready(() => {
   $('.hamb').on('click', function() {
     $(this).toggleClass('hamb_active')
     $('.nav').toggleClass('nav_active')
-    $('body').toggleClass('disable-scroll')
+    $(document.documentElement).toggleClass('disable-scroll')
   })
 
   $('.nav-submenu-item').on('click', function (e) {
@@ -20,5 +20,5 @@ $(document).ready(() => {
   })
 
 
-  $('.hamb').click()
+  // $('.hamb').click()
 })

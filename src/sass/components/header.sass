@@ -19,10 +19,10 @@
   &__item
     display: block
     vertical-align: top
-    margin-top: 14px
     cursor: pointer
 
     & > a
+      display: inline-block
       color: $text-dark-color
       text-transform: uppercase
       margin-top: 14px
@@ -51,6 +51,9 @@
 
   .nav__submenu:last-child
     margin-bottom: 30px
+
+  .nav__item
+    font-size: 20px
 
   .nav__submenu
     display: none
@@ -91,7 +94,7 @@
     font-weight: bold
 
 
-+tablet
++minTablet
   .header__in
     padding: 16px 0 15px
     height: 80px
@@ -108,20 +111,22 @@
     display: block
     position: absolute
     top: 16px
+    width: 50%
+
   .nav__left
     right: 50%
     text-align: right
-    padding-right: 45px
-    margin-right: 40px
+    padding-right: 85px
+
   .nav__right
     left: 50%
     text-align: left
-    padding-left: 45px
-    margin-left: 40px
+    padding-left: 85px
 
   .nav__item
     display: inline-block
-    padding: 0 45px
+    padding: 0 30px
+    font-size: 12px
 
   .nav__submenu-item > a
     color: $text-color
@@ -143,7 +148,7 @@
       display: flex
       flex-direction: row
       flex-wrap: nowrap
-      justify-content: center
+      justify-content: space-around
       max-width: 1333px
       margin: 0 auto
       padding: 26px 0 53px
@@ -151,8 +156,10 @@
 
   .nav__submenu__column
     flex: 0 0 auto
-    & + &
-      margin-left: 198px
 
   .nav__item_active .nav__submenu
     display: block
+
++minDescop
+  .nav .nav__item
+    padding: 0 45px
