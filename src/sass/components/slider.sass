@@ -1,6 +1,6 @@
 .slider
   // height: calc(100vh - 80px)
-  height: 700px
+  // height: 700px
   width: 100%
   position: relative
 
@@ -32,9 +32,14 @@
   justify-content: center
   text-align: center
   align-items: center
-  height: 700px
   width: 100%
   position: relative
+  // 80px - height of header
+  height: calc(100vh - 80px)
+  max-height: 700px
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: 0 0
 
   .image
     position: absolute
@@ -46,11 +51,14 @@
 
   .text
     +tenor
-    margin-top: -15px
     display: inline-block
-    font-size: 38px
+    font-size: 24px
     text-align: justify
     +gradient-text
+
+    +tablet
+      margin-top: -15px
+      font-size: 38px
 
   .button
     display: inline-block
