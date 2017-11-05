@@ -1,0 +1,76 @@
+
+.categories-block
+  text-align: left
+
+  &::after
+    content: ''
+    margin-top: 50px
+    display: block
+    width: 100%
+    height: 1px
+    background: #C1B07A
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+
+  .list
+    margin-top: 20px
+    li
+      color: #646363
+      line-height: 24px
+    a
+      color: inherit
+
+.collection-gallery
+  font-size: 0
+  line-height: 0
+  margin: -10px
+
+  .item
+    display: inline-block
+    width: 33.3333%
+    position: relative
+    padding: 10px
+
+    &__in
+      width: 100%
+      height: 342px
+      background-size: cover
+      background-position: 0 0
+      background-repeat: no-repeat
+
+    &_doubled
+      width: 66.6666%
+
+    img
+      width: 100%
+      height: 100%
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)
+
+.collection-gallery-loader
+  display: inline-block
+
+  img
+    height: 40px
+    width: 40px
+    animation: rotate 1s linear infinite
+
+
+.collection-page
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  padding: 0 134px 100px
+
+  &__categories
+    flex: 0 0 216px
+  &__gallery
+    flex: 1 1 auto
+    margin-left: 50px
+
+  &__loader
+    margin-top: 100px
+    text-align: center

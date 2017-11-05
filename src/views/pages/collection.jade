@@ -1,0 +1,29 @@
+extends ../layouts/main
+
+block content
+  include ../partials/header
+  article.quotation-block
+    .text CONVINCE THE WORLD THAT THERE MAY BE, THERE ARE, THINGS MORE PRECIOUS, MORE BEAUTIFUL, MORELASTINGTHANLIFEITSELF.
+    .author Charles Rennie Mackintosh
+  article.collection-page
+    .collection-page__categories
+      .categories-block
+        .section-title Categories
+        ul.list
+          each val, index in ['Armchair', 'Cabinet', 'Casket', 'Chair', 'Chandelier', 'Console', 'Floor lamp', 'Mirror', 'Night table', 'Pouffe', 'Sofa', 'Table', 'Table lamp', 'Vase', 'Wall light']
+            li: a(href="#")=val
+    .collection-page__gallery
+      .collection-gallery
+        a.item.item_doubled: .item__in(style="background-image: url('https://picsum.photos/g/704/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+        a.item: .item__in(style="background-image: url('https://picsum.photos/g/342/342')")
+      .collection-page__loader
+        .collection-gallery-loader
+          img(src="/img/loader@2x.png")
+            
+  include ../partials/footer

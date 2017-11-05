@@ -3,8 +3,12 @@ var rimraf = require('rimraf');
 var config = require('../config');
 var rimraf = require('rimraf');
 var ghPages = require('gulp-gh-pages');
+var debug = require('gulp-debug');
 var config = require('../config');
 var sequence = require('gulp-sequence');
+var prefix = require('gulp-prefix');
+var gulpIf = require('gulp-if');
+var packageJson = require('../../package.json')
 
 gulp.task('watch', [
     'images:watch',
@@ -22,10 +26,11 @@ gulp.task('default', ['build', 'server', 'watch']);
 gulp.task('build', sequence('delete',['html','images','copy','js','sass']));
 
 
-gulp.task('deploy', function () {
+gulp.task('deploy', ['build'], function () {
   return gulp.src([
       'build/**/*',
       'CNAME'
-  ])
+  ]).pipe(gulpIf('**/*.html', prefix(`/${packageJson.name}`)))
+  .pipe(gulpIf('**/*.html', debug()))
       .pipe(ghPages());
 });
