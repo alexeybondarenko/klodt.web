@@ -6,6 +6,7 @@ var htmlmin = require('gulp-htmlmin');
 var s18n = require('s18n');
 var gulpIf = require('gulp-if');
 var debug = require('gulp-debug');
+var notify = require('gulp-notify');
 
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
