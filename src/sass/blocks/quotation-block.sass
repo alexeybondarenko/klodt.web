@@ -1,11 +1,14 @@
 .quotation-block
   text-align: center
   max-width: 637px
-  padding-top: 80px
-  padding-bottom: 80px
   position: relative
-  margin: 36px auto 56px
+  margin: 24px auto 25px
+  padding: 48px 25px 50px
 
+  +minTablet
+    padding-top: 80px
+    padding-bottom: 80px
+    margin: 36px auto 56px
 
   &::before,
   &::after
@@ -15,9 +18,12 @@
     margin-left: -1px
     display: block
     width: 1px
-    height: 60px
+    height: 40px
     background: #C1B07A
     background-image: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+
+    +minTablet
+      height: 60px
 
   &::after
     top: 0
@@ -27,20 +33,31 @@
   .text
     display: inline-block
     +tenor
-    font-size: 30px
     color: $primary-text-color
-    line-height: 40px
     max-width: 637px
-    text-align: justify
+
+    text-align: center
+    font-size: 20px
+    line-height: 24px
+
     &::before
-      content: '°°       '
+      content: '°° '
     &::after
-      content: '       °°'
+      content: ' °°'
       white-space: nowrap
+
+    +minTablet
+      text-align: justify
+      font-size: 30px
+      line-height: 40px
+
+      &::before
+        content: '°°       '
+      &::after
+        content: '       °°'
+        white-space: nowrap
   .author
     display: inline-block
-    font-weight: bold
-    color: #c5b275
     letter-spacing: 0
     line-height: 24px
     margin-top: 14px

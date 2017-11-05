@@ -22,23 +22,34 @@
 .collection-gallery
   font-size: 0
   line-height: 0
-  margin: -10px
+  margin: -5px
+  +minTablet
+    margin: -10px
 
   .item
     display: inline-block
-    width: 33.3333%
     position: relative
-    padding: 10px
+    width: 50%
+    padding: 5px
+
+    +minTablet
+      width: 33.3333%
+      padding: 10px
 
     &__in
       width: 100%
-      height: 342px
       background-size: cover
       background-position: 0 0
       background-repeat: no-repeat
+      height: 158px
+
+      +minTablet
+        height: 342px
 
     &_doubled
-      width: 66.6666%
+      width: 100%
+      +minTablet
+        width: 66.6666%
 
     img
       width: 100%
@@ -60,17 +71,29 @@
 
 
 .collection-page
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  padding: 0 134px 100px
+  padding: 0 25px 80px
+
+  +minTablet
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    padding: 0 134px 100px
 
   &__categories
-    flex: 0 0 216px
+    display: none
+
+    +minTablet
+      display: block
+      flex: 0 0 216px
+
   &__gallery
-    flex: 1 1 auto
-    margin-left: 50px
+    +minTablet
+      flex: 1 1 auto
+      margin-left: 50px
 
   &__loader
-    margin-top: 100px
     text-align: center
+    margin-top: 50px
+
+    +minTablet
+      margin-top: 100px

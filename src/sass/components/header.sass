@@ -1,7 +1,6 @@
 
 .header
   text-align: center
-  padding: 0 133px
   position: relative
   background-color: white
   line-height: 0
@@ -49,6 +48,9 @@
     left: 20px
     top: 21px
 
+  .nav__menu__items
+    display: none
+
   .nav__submenu:last-child
     margin-bottom: 30px
 
@@ -69,6 +71,8 @@
       font-weight: 400
 
   .nav_active
+    .nav__menu__items
+      display: block
     .nav__menu
       display: block
       opacity: 1
@@ -95,6 +99,8 @@
 
 
 +minTablet
+  .header
+    padding: 0 133px
   .header__in
     padding: 16px 0 15px
     height: 80px
