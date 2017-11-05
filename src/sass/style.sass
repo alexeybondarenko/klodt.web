@@ -21,17 +21,30 @@ $text-dark-color: #3d3d3d
 $text-size: 14px
 $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
 
+=maxMobile
+  +r(320)
+    @content
+
 =mobile
   +rm(320)
     @content
 
+=maxTablet
+  +r(768)
+    @content
+
 =tablet
-  +rm(768)
+  +rm(769)
+    @content
+
+=maxDescop
+  +r(1024)
     @content
 
 =descop
-  +rm(1024)
+  +rm(1025)
     @content
+
 
 .pixel-perfect
   background-position: 0 0
@@ -56,6 +69,9 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+.disable-scroll
+  overflow: hidden
+
 =gradient-text
   // color: $primary-color
   background:  linear-gradient(90deg, #c0b07c 0%, #c6b373 50%, #ccb56b 100%)
@@ -70,7 +86,7 @@ body
   -webkit-text-fill-color: transparent
 
 
-
+@import ./components/hamb
 @import ./components/header
 @import ./components/slider
 @import ./components/footer
