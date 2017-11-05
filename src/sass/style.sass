@@ -94,6 +94,36 @@ body
   font-size: 22px
   text-transform: uppercase
 
+.breadcrumbs
+  display: block
+  &__item
+    display: inline-block
+    text-transform: uppercase
+    font-size: 12px
+    color: $text-dark-color
+    position: relative
+    padding-left: 50px
+
+    &_active
+      color: #ccb56c
+
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      width: 30px
+      height: 1px
+      background-color: #c1b17b
+      left: 10px
+      top: 6px
+      margin-right: 10px
+
+    &:first-child
+      padding-left: 0
+      &::before
+        display: none
+
 @import ./blocks/index
 @import ./blocks/quotation-block
 @import ./blocks/collection-page
+@import ./blocks/card-page
