@@ -1,0 +1,71 @@
+
+.contact-page
+  padding: 80px 133px
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+
+  &__right
+    padding-left: 50px
+    position: relative
+    flex: 1 1  auto
+
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      width: 1px
+      left: 0
+      top: 0
+      height: 100%
+      background: #C1B07A
+      background-image: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+
+  &__left
+    padding-right: 50px
+    display: flex
+    justify-content: space-between
+    flex: 0 0 auto
+    flex-direction: column
+    flex-wrap: nowrap
+    width: 265px
+    line-height: 24px
+
+    .section-title
+      margin-bottom: 30px
+
+    p + p
+      margin-top: 30px
+
+    b
+      font-weight: bold
+
+
+  &__contacts
+    flex: 1 1 auto
+    padding-bottom: 30px
+
+  &__press
+    flex: 0 0 auto
+    padding-top: 30px
+
+    &::before
+      content: ''
+      display: block
+      width: 100%
+      height: 1px
+      background: #c1b07a
+      background-image: linear-gradient(-180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+      margin-bottom: 30px
+
+.with-signature
+  position: relative
+
+  .signature
+    @extend .icon
+    @extend .icon-signature
+
+    font-size: 45px
+    position: absolute
+    bottom: 30px
+    left: 33px
