@@ -1,46 +1,70 @@
 
 .card-page
-  padding: 0 133px
+  padding-bottom: 45px
+  +minTablet
+    padding: 0 133px
 
   &__breadcrumbs
-    padding: 40px 0 30px
+    display: none
+    +minTablet
+      padding: 40px 0 30px
+      display: block
 
   &__item
 
   &__other-products
-    margin-top: 150px
-    padding-bottom: 100px
+    margin-top: 84px
+    padding: 0 25px
+
+
+    +minTablet
+      margin-top: 150px
+      padding: 0
+      padding-bottom: 100px
 
     .other-products
-      margin-top: 50px
+      margin-top: 30px
+
+      +minTablet
+        margin-top: 50px
 
 .card-item-block
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  align-items: top
+
+  +minTablet
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    align-items: top
+    padding-bottom: 110px
 
   &__gallery
-    flex: 1 1 auto
+    +minTablet
+      flex: 1 1 auto
 
   &__description
-    flex: 0 0 auto
-    width: 270px
-    margin-left: 50px
-    padding-right: 30px
-    display: flex
-    flex-direction: column
-    wrap: nowrap
-    padding-bottom: 5px
+    padding: 0 25px
+    margin-top: 44px
 
-    .card-info
-      flex: 1 1 auto
-    .card-sizes
+    +minTablet
+      margin-top: 0
+      margin-left: 50px
       flex: 0 0 auto
+      width: 270px
+      padding: 0 30px 5px 0
+      display: flex
+      flex-direction: column
+      wrap: nowrap
 
-  padding-bottom: 110px
+      .card-info
+        flex: 1 1 auto
+      .card-sizes
+        flex: 0 0 auto
+
   .gallery-previews
-    position: absolute
+    display: none
+    +minTablet
+      display: block
+      position: absolute
 
 
 
@@ -64,13 +88,18 @@
   &__arrows
     position: absolute
     top: 50%
-    left: 30px
-    right: 30px
-    height: 30px
     margin-top: -15px
     font-size: 30px
     color: #b29d5c
     z-index: 2
+    left: 30px
+    right: 30px
+    height: 30px
+    display: none
+
+    +minTablet
+      display: block
+
 
   &__arrow-left,
   &__arrow-right
@@ -99,22 +128,39 @@
     margin-top: 10px
 
 .card-info
-  .section-title
-    margin-bottom: 20px
+  padding: 0 15px
+  +minTablet
+    padding: 0
+
+  .text-subtitle
+    margin-bottom: 24px
+    +minTablet
+      margin-bottom: 20px
   .text
     line-height: 24px
     letter-spacing: 0
 
 .card-sizes
-  padding-top: 20px
+  position: relative
+  padding: 0 15px
+
+  +minTablet
+    padding: 0
+
+  padding-top: 30px
+  margin-top: 30px
+
   font-weight: bold
   letter-spacing: 0
   line-height: 24px
 
   &::before
     content: ''
+    position: absolute
     display: block
     width: 100%
+    top: 0
+    left: 0
     height: 1px
     background: #c1b07a
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
@@ -123,14 +169,28 @@
 .other-products
   font-size: 0
   line-height: 0
-  margin: -10px
+  margin: -5px
+  +minTablet
+    margin: -10px
 
   &__item
     display: inline-block
     vertical-align: top
-    width: 33.33%
     overflow: hidden
-    padding: 10px
+
+    width: 50%
+    padding: 5px
+
+    +minTablet
+      width: 33.33%
+      padding: 10px
+
+    &:nth-child(3n+3)
+      display: none
+
+    +minTablet
+      &:nth-child(3)
+        display: inline-block
 
     img
       width: 100%
