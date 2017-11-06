@@ -30,7 +30,14 @@ gulp.task('deploy', ['build'], function () {
   return gulp.src([
       'build/**/*',
       'CNAME'
-  ]).pipe(gulpIf('**/*.html', prefix(`/${packageJson.name}`)))
+  ]).pipe(gulpIf('**/*.html', prefix(`/${packageJson.name}`, [
+      {match: "a[href]", attr: "href"}, // this selector was added to the default set of selectors
+      {match: "script[src]", attr: "src"},
+      {match: "link[href]", attr: "href"},
+      {match: "img[src]", attr: "src"},
+      {match: "input[src]", attr: "src"},
+      {match: "img[data-ng-src]", attr: "data-ng-src"}
+    ])))
   .pipe(gulpIf('**/*.html', debug()))
       .pipe(ghPages());
 });
