@@ -1,38 +1,51 @@
 
 .contact-page
-  padding: 80px 133px
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
+  margin-top: -1px
+
+  +minTablet
+    padding: 80px 133px
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
 
   &__right
-    padding-left: 50px
-    position: relative
-    flex: 1 1  auto
+    +minTablet
+      padding-left: 50px
+      position: relative
+      flex: 1 1  auto
+      order: 2
 
-    &::before
-      content: ''
-      display: block
-      position: absolute
-      width: 1px
-      left: 0
-      top: 0
-      height: 100%
-      background: #C1B07A
-      background-image: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        width: 1px
+        left: 0
+        top: 0
+        height: 100%
+        background: #C1B07A
+        background-image: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
 
   &__left
-    padding-right: 50px
-    display: flex
-    justify-content: space-between
-    flex: 0 0 auto
-    flex-direction: column
-    flex-wrap: nowrap
-    width: 265px
     line-height: 24px
+    padding: 44px 25px
 
-    .section-title
-      margin-bottom: 30px
+    +minTablet
+      padding: 0
+      padding-right: 50px
+      display: flex
+      justify-content: space-between
+      flex: 0 0 auto
+      flex-direction: column
+      flex-wrap: nowrap
+      width: 265px
+      order: 1
+
+    .text-subtitle
+      margin-bottom: 25px
+
+      +minTablet
+        margin-bottom: 30px
 
     p + p
       margin-top: 30px
@@ -42,12 +55,17 @@
 
 
   &__contacts
-    flex: 1 1 auto
     padding-bottom: 30px
 
+    +minTablet
+      flex: 1 1 auto
+
   &__press
-    flex: 0 0 auto
-    padding-top: 30px
+    padding-top: 45px
+
+    +minTablet
+      padding-top: 30px
+      flex: 0 0 auto
 
     &::before
       content: ''
@@ -56,4 +74,7 @@
       height: 1px
       background: #c1b07a
       background-image: linear-gradient(-180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
-      margin-bottom: 30px
+      margin-bottom: 45px
+
+      +minTablet
+        margin-bottom: 30px

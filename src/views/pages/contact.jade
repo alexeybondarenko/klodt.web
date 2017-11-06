@@ -3,27 +3,27 @@ extends ../layouts/main
 block content
   include ../partials/header
   article.contact-page
-      .contact-page__left
-        .contacts-page__contacts
-          .section-title Contact
-          p
-            b General enquiries
-            br
-            | Phone: +44 (0) 7504 256049
-            br
-            | Email: info@oa-london.com
-          p
-            b Sales enquiries
-            br
-            | Email: bruno@olegklodt.com
-        .contact-page__press
-          p
-            b Press / marketing enquiries
-            br
-            | Email: anastasia@@olegklodt.com
-      .contact-page__right
-        .with-signature
-          img(src="https://picsum.photos/g/966/609")
-          .signature
+    .contact-page__right
+      .with-signature
+        img(src="https://picsum.photos/g/966/609")
+        .signature
+    .contact-page__left
+      .contacts-page__contacts
+        .text-subtitle Contact
+        p
+          b General enquiries
+          br
+          | Phone: +44 (0) 7504 256049
+          br
+          | Email: info@oa-london.com
+        p
+          b Sales enquiries
+          br
+          | Email: bruno@olegklodt.com
+      .contact-page__press
+        p
+          b Press / marketing enquiries
+          br
+          | Email: anastasia@@olegklodt.com
           
   include ../partials/footer
