@@ -1,21 +1,29 @@
 
 .about-page
-  padding: 80px 133px 100px
+  padding: 24px 0 40px
+  +minTablet
+    padding: 80px 133px 100px
 
 
 .section-title
   +tenor
-  font-size: 30px
   color: #c0b07c
-  line-height: 40px
-  margin-bottom: 33px
   text-transform: uppercase
+  font-size: 20px
+  line-height: 24px
+  margin-bottom: 25px
+
+  +minTablet
+    font-size: 30px
+    line-height: 40px
+    margin-bottom: 33px
 
 .section
   &_with-photo
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
+    +minTablet
+      display: flex
+      flex-direction: row
+      flex-wrap: nowrap
 
     .photo
       img
@@ -25,34 +33,47 @@
       margin-top: 10px
 
     .section__content
-      padding: 0 133px
-      flex: 1 1 auto
-      font-size: 18px
+      font-size: 16px
+      padding: 0 40px
+      +minTablet
+        font-size: 18px
+        padding: 0 133px
+        flex: 1 1 auto
+        order: 1
 
     .section__photo
-      flex: 0 0 auto
-      padding: 0 133px
-      width: 532px
       position: relative
+      padding: 0 25px
+      margin-bottom: 30px
 
-      &::before
-        content: ''
-        display: block
-        position: absolute
-        height: 100%
-        width: 1px
-        left: 0
-        top: 0
-        background: #C1B07A
-        background-image: linear-gradient(-180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
-        margin-bottom: 50px
+      +minTablet
+        flex: 0 0 auto
+        padding: 0 133px
+        width: 532px
+        margin-bottom: 0
+        order: 2
 
-
+        &::before
+          content: ''
+          display: block
+          position: absolute
+          height: 100%
+          width: 1px
+          left: 0
+          top: 0
+          background: #C1B07A
+          background-image: linear-gradient(-180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+          margin-bottom: 50px
 
     .section-block
-      padding-bottom: 50px
+      margin-bottom: 44px
+      +minTablet
+        margin-bottom: 50px
+
       p + p
-        margin-top: 40px
+        margin-top: 30px
+        +minTablet
+          margin-top: 40px
 
     .section-block + .section-block
       &::before
@@ -65,4 +86,7 @@
         margin-bottom: 50px
 
   &_photo
-    margin: 60px 0
+    margin: 44px 0
+
+    +minTablet
+      margin: 60px 0

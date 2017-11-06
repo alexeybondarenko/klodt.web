@@ -4,6 +4,10 @@ block content
   include ../partials/header
   article.about-page
     .section.section_with-photo
+      .section__photo
+        .photo
+          img(src="https://picsum.photos/g/300/200")
+        .photo-caption Photo explanation
       .section__content
         .section-block
           .section-title The O&A London designer furniture collection — from the Oleg Klodt Architectural Studio
@@ -11,11 +15,6 @@ block content
         .section-block
           .section-title The inspiration for the collection 
           p The minimalism and precision of O&A London pieces can be traced back to the luxuriance of the Art-Dèco and late Modernism movements and to the clean, sharp lines of Bauhaus. By cherry-picking attributes from these iconic moments in history, O&A London has created something classically-rooted for the contemporary interior. It is a collection that can be said to question the very role of furniture; a fundamentally sculptural approach that embraces the very latest technologies in a skillful balance of ideas and materials, of form and function. 
-        
-      .section__photo
-        .photo
-          img(src="https://picsum.photos/g/300/400")
-        .photo-caption Photo explanation
     .section.section_photo
       .with-signature: img(src="https://picsum.photos/g/1333/650")
     .section.section_with-photo
@@ -23,10 +22,12 @@ block content
         .section-block
           p Further inspiration for the collection comes from the days when the Cult of Curiosity reigned and characterful, one-off items spoke volumes about their owners. This provenance imbues each piece with a life of its own and makes it as much art as furniture – something best appreciated against a neutral background but able to hold its own in any space.
           p A unique feature of this collection is its ability – guided by Oleg’s architectural eye and Anna’s design sensibilities – to blend luxury, simplicity of form and complexity of technique. Exquisite textures meet hand-crafted touches. Classical design meets advanced manufacturing techniques. 
-          p This uniquely rounded approach means that both style and structure co-exist happily in every piece in the collection. Whether the statement chandelier with its five 25-kilogram glass orbs or the flowing silhouettes of the elliptical sofa or floor uplighter, concealed metal frames have enabled the designers to create pieces that deliver impact without compromising comfort or practicality.
+    .section.section_with-photo
       .section__photo
         .photo
           img(src="https://picsum.photos/g/300/200")
         .photo-caption Photo explanation
+      .section__content
+          p This uniquely rounded approach means that both style and structure co-exist happily in every piece in the collection. Whether the statement chandelier with its five 25-kilogram glass orbs or the flowing silhouettes of the elliptical sofa or floor uplighter, concealed metal frames have enabled the designers to create pieces that deliver impact without compromising comfort or practicality.
 
   include ../partials/footer
