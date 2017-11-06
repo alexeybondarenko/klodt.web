@@ -1,6 +1,7 @@
 @import ./lib/mixins
 @import ./lib/reset
 @import ./lib/svgfont
+@import ./lib/grid
 
 +font('Quasimoda', 'Quasimoda-Regular', 400)
 +font('Quasimoda', 'Quasimoda-Italic', 400, italic)
@@ -45,6 +46,13 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   +rm(1025)
     @content
 
+=vertical-gradient
+  background-color: #c1b07a
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%)
+=hor-gradient
+  transform: rotate(-180deg)
+  background-color: #c1b07a
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%)
 
 .pixel-perfect
   background-position: 0 0

@@ -3,7 +3,6 @@ var argv = require('yargs').argv;
 var config = require('../config');
 var browserSync = require('browser-sync');
 var htmlmin = require('gulp-htmlmin');
-var s18n = require('s18n');
 var gulpIf = require('gulp-if');
 var debug = require('gulp-debug');
 var notify = require('gulp-notify');
