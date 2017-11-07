@@ -20,12 +20,17 @@
       height: 7px
       border-radius: 50%
       background: white
+      font-size: 0
+
+      button
+        font-size: 0
 
       +maxTablet
         width: 5px
         height: 5px
 
-      &.active
+      &.active,
+      &.slick-active
         background: #c7b374
 
     li + li

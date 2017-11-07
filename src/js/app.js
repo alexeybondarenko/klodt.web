@@ -19,6 +19,15 @@ $(document).ready(() => {
     $(this).parent('.nav__item_with-submenu').toggleClass('nav__item_active')
   })
 
-
+  $('.slider').each(function () {
+    $(this).find('.slider__items').slick({
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      dots: true,
+      arrows: false,
+      appendDots: $(this).find('.slider__dots')
+    });
+  })
   // $('.hamb').click()
 })

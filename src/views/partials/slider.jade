@@ -1,6 +1,6 @@
 .slider
   .slider__items
-    .slider__item(style="background-image: url('https://picsum.photos/g/1600/700'); background-position: right bottom")
+    div: .slider__item(style="background-image: url('https://picsum.photos/g/1600/700'); background-position: right bottom")
       .text
         | O&A LONDON DESIGNER
         br 
@@ -11,8 +11,19 @@
         | ARCHITECTURAL STUDIO
       a.button(href="#see-more") See more&nbsp;
         i.icon.icon-carret-right
-  ul.slider__dots
-    li.active
-    li
-    li
-    li
+    div: .slider__item(style="background-image: url('https://picsum.photos/g/1600/700'); background-position: right bottom")
+      .text
+        | O&A LONDON DESIGNER
+        br 
+        | FURNITURE COLLECTION
+        br
+        | FROM THE OLEG KLODT
+        br
+        | ARCHITECTURAL STUDIO
+      a.button(href="#see-more") See more&nbsp;
+        i.icon.icon-carret-right
+  div.slider__dots
+    //- li.active
+    //- li
+    //- li
+    //- li
