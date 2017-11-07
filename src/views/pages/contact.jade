@@ -2,13 +2,13 @@ extends ../layouts/main
 
 block content
   include ../partials/header
-  article.contact-page
-    .contact-page__right
+  article.contact-page: .row
+    .col-xs-12.col-lg-5.col-lg-offset-1: .contact-page__right
       .with-signature
         img(src="https://picsum.photos/g/966/609")
         .signature
-    .contact-page__left
-      .contacts-page__contacts
+    .col-xs-12.col-lg-4.col-lg-offset-1.first-lg: .contact-page__left
+      .contact-page__contacts
         .text-subtitle Contact
         p
           b General enquiries
@@ -25,5 +25,4 @@ block content
           b Press / marketing enquiries
           br
           | Email: anastasia@@olegklodt.com
-          
   include ../partials/footer

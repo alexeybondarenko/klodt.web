@@ -89,6 +89,22 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
       height: 100%
       +hor-gradient
 
+.descop-border-right
+  position: relative
+  display: none
+  +minDescop
+    display: block
+
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    height: 100%
+    width: 1px
+    right: 0
+    top: 0
+    background-color: #c1b07a
+
 .pixel-perfect
   background-position: 0 0
   background-repeat: no-repeat
@@ -113,15 +129,21 @@ body
 .wrap
   max-width: 1333px
   margin: 0 auto
+  overflow: hidden
+
 .in
-  padding: 0 25px
+  padding-left: 25px
+  padding-right: 25px
   +minDescop
-    padding: 0
+    padding-left: 0
+    padding-right: 0
 
 .in-big
-  padding: 0 40px
+  padding-left: 40px
+  padding-right: 40px
   +minDescop
-    padding: 0
+    padding-left: 0
+    padding-right: 0
 
 .disable-scroll
   +maxDescop
@@ -150,13 +172,12 @@ body
 @import ./components/with-signature
 
 .text-title
-  +gradient-text-simple
   +tenor
 
-  +maxTablet
-    color: #c0b07c
-    font-size: 20px
-    line-height: 24px
+  color: #c0b07c
+  font-size: 20px
+  line-height: 24px
+
   +minTablet
     font-size: 22px
 
