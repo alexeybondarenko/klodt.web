@@ -1,8 +1,10 @@
 extends ../layouts/main
 
+block variables
+  - var page = 'contact'
+  
 block content
-  include ../partials/header
-  article.contact-page: .row
+  .contact-page: .row
     .col-xs-12.col-lg-6.col-xl-8: .contact-page__right
       .with-signature
         img(src="https://picsum.photos/g/966/609")
@@ -25,4 +27,3 @@ block content
           b Press / marketing enquiries
           br
           | Email: anastasia@@olegklodt.com
-  include ../partials/footer

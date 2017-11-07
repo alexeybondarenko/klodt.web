@@ -1,8 +1,10 @@
 extends ../layouts/main
 
+block variables
+  - var page = 'card'
+  
 block content
-  include ../partials/header
-  div.card-page: .row: .col-xs-12.col-lg-10.col-lg-offset-1
+  .card-page: .row: .col-xs-12.col-lg-10.col-lg-offset-1
     .card-page__breadcrumbs
       div.breadcrumbs
         a.breadcrumbs__item(href="/collection.html") Collections
@@ -36,4 +38,3 @@ block content
         a.other-products__item(href="/card.html#product-1"): img(src="https://picsum.photos/g/600/600")
         a.other-products__item(href="/card.html#product-2"): img(src="https://picsum.photos/g/600/600")
         a.other-products__item(href="/card.html#product-3"): img(src="https://picsum.photos/g/600/600")
-  include ../partials/footer

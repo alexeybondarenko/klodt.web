@@ -1,4 +1,5 @@
 header.header: .row: .col-xs-12.col-lg-10.col-lg-offset-1
+  .nav-submenu-backdrop
   .header__in
     nav.nav
       .nav__center
@@ -12,38 +13,25 @@ header.header: .row: .col-xs-12.col-lg-10.col-lg-offset-1
             span
         .nav__menu__items
           .nav__left
-            .nav__item.nav__item_active: a(href="/index.html") Home
-            .nav__item: a(href="/about.html") About
+            if (page === 'home')
+              .nav__item.nav__item_active: a(href="/index.html") Home
+            else
+              .nav__item: a(href="/index.html") Home
+            if (page === 'about')
+              .nav__item.nav__item_active: a(href="/about.html") About
+            else
+              .nav__item: a(href="/about.html") About
           .nav__right
-            .nav__item.nav__item_with-submenu
-              a(href="/collection.html") Collection
-              .nav__submenu
-                .nav__submenu__backdrop
-                .nav__submenu__in
-                  .nav__submenu__column
-                    .nav__submenu-item: a(href="/collection.html#all") All
-                    .nav__submenu-item: a(href="/collection.html#armchair") Armchair
-                    .nav__submenu-item: a(href="/collection.html#cabinet") Cabinet
-                    .nav__submenu-item: a(href="/collection.html#casket") Casket
-                    .nav__submenu-item: a(href="/collection.html#chair") Chair
-                    .nav__submenu-item: a(href="/collection.html#chandelier") Chandelier
-                  .nav__submenu__column
-                    .nav__submenu-item: a(href="/collection.html#console") Console
-                    .nav__submenu-item: a(href="/collection.html#floor-lamp") Floor lamp
-                    .nav__submenu-item: a(href="/collection.html#mirror") Mirror
-                    .nav__submenu-item: a(href="/collection.html#night-table") Night table
-                    .nav__submenu-item: a(href="/collection.html#pouffe") Pouffe
-                  .nav__submenu__column
-                    .nav__submenu-item: a(href="/collection.html#sofa") Sofa
-                    .nav__submenu-item: a(href="/collection.html#table") Table
-                    .nav__submenu-item: a(href="/collection.html#table-lamp") Table lamp
-                    .nav__submenu-item: a(href="/collection.html#vase") Vase
-                    .nav__submenu-item: a(href="/collection.html#wall-light") Wall light
-                  .nav__submenu__column
-                    .nav__submenu-item: a(href="/collection.html#armchair") Armchair
-                    .nav__submenu-item: a(href="/collection.html#cabinet") Cabinet
-                    .nav__submenu-item: a(href="/collection.html#casket") Casket
-                    .nav__submenu-item: a(href="/collection.html#chair") Chair
-                    .nav__submenu-item: a(href="/collection.html#chandelier") Chandelier
+            if (page === 'collection')
+              .nav__item.nav__item_active.nav__item_with-submenu
+                a(href="/collection.html") Collection
+                include ./collection-submenu
+            else
+              .nav__item.nav__item_with-submenu
+                a(href="/collection.html") Collection
+                include ./collection-submenu
                 
-            .nav__item: a(href="/contact.html") Contact
+            if (page === 'contact')
+              .nav__item.nav__item_active: a(href="/contact.html") Contact
+            else
+              .nav__item: a(href="/contact.html") Contact

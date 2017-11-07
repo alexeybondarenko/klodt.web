@@ -1,8 +1,10 @@
 extends ../layouts/main
 
+block variables
+  - var page = 'collection'
+
 block content
-  include ../partials/header
-  article.quotation-block
+  .quotation-block
     .text CONVINCE THE WORLD THAT THERE MAY BE, THERE ARE, THINGS MORE PRECIOUS, MORE BEAUTIFUL, MORE LASTING THAN LIFE ITSELF
     .author Charles Rennie Mackintosh
   .row: .col-xs-12.col-lg-10.col-lg-offset-1: article.collection-page
@@ -25,5 +27,3 @@ block content
       .collection-page__loader
         .collection-gallery-loader
           img(src="/img/loader@2x.png")
-            
-  include ../partials/footer

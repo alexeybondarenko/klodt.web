@@ -13,10 +13,26 @@ $(document).ready(() => {
   $('.nav-submenu-item').on('click', function (e) {
     e.stopPropagation()
   })
+
+  $('.nav__item_with-submenu').hover(function () {
+    $(document.documentElement).addClass('nav-submenu-openned')
+  }, function () {
+    $(document.documentElement).removeClass('nav-submenu-openned')
+  })
+
+  function isMobileNav () {
+    return $(document).width() < 1024;
+  }
+
   $('.nav__item_with-submenu > a').on('click', function (e) {
+    if (!isMobileNav()) return;
+    var parent = $(this).parent('.nav__item_with-submenu')
+    var hasClass = parent.hasClass('nav__item_active-submenu')
+
     e.preventDefault()
     e.stopPropagation()
-    $(this).parent('.nav__item_with-submenu').toggleClass('nav__item_active')
+    $('.nav__item_with-submenu').removeClass('nav__item_active-submenu')
+    if (!hasClass) parent.addClass('nav__item_active-submenu')
   })
 
   $('.slider').each(function () {

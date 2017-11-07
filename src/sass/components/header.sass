@@ -9,6 +9,30 @@
     position: relative
     box-shadow: 0 1px 0 0 #c4b176
 
+.nav-submenu-backdrop
+  position: fixed
+  top: 0
+  left: 0
+  pointer-events: none
+  bottom: 0
+  right: 0
+  overflow: hidden
+  background: white
+  z-index: 20
+
+  opacity: 0
+  transition: opacity .15s ease-in
+
+.nav-submenu-openned
+  overflow: hidden
+  max-height: 100vh
+  .nav-submenu-backdrop
+    opacity: .8
+
+  .header__in
+    z-index: 21
+    box-shadow: none
+
 .nav
   display: inline-block
 
@@ -27,9 +51,9 @@
       text-transform: uppercase
       margin-top: 14px
 
-      &:hover
-        color: $primary-color
 
+    &:hover > a
+      color: $primary-color
     &_active > a
       color: $primary-color
 
@@ -53,25 +77,41 @@
   .nav__logo img
     width: 55px
     height: 34px
+
   .nav__hamb
     position: absolute
     left: 20px
     top: 21px
 
+  .nav__menu
+    -webkit-overflow-scrolling: touch
   .nav__menu__items
-    display: none
+    opacity: 0
+    visibility: hidden
+    transition: opacity .5s ease-in
 
-  .nav__submenu:last-child
+  .nav__submenu__in:last-child
     margin-bottom: 30px
 
   .nav__item
     font-size: 20px
 
   .nav__submenu
-    display: none
+    transform: translateY(-30px)
+    opacity: 0
+    transition: all .2s ease-in
 
-  .nav_active .nav__item_active .nav__submenu
-    display: block
+    &__in
+      display: none
+
+  .nav_active .nav__item_active-submenu
+    .nav__submenu
+      transform: translateY(0)
+      opacity: 1
+
+      &__in
+        display: block
+
 
   .nav__submenu-item
     margin-top: 20px
@@ -83,9 +123,10 @@
   .nav_active
     .nav__menu__items
       display: block
-    .nav__menu
-      display: block
+      visibility: visible
       opacity: 1
+
+    .nav__menu
       font-size: 20px
       padding-top: 185px
       position: fixed
@@ -97,13 +138,14 @@
       z-index: 999
       overflow-y: auto
       padding-bottom: 100px
+      opacity: 1
 
     .nav__center
       opacity: 0
     .nav__hamb
       position: fixed
 
-  .nav__item_with-submenu.nav__item_active > a
+  .nav__item_with-submenu.nav__item_active-submenu > a
     color: $text-color
     font-weight: bold
 
@@ -148,7 +190,7 @@
     font-weight: 400
 
   .nav__submenu
-    display: none
+    visibility: hidden
     position: fixed
     width: 100%
     background: white
@@ -157,13 +199,21 @@
     top: 79px
     z-index: 100
 
+    &::before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 35px
+      top: -35px
+      display: block
+
     .nav__submenu__in
       position: relative
       display: flex
       flex-direction: row
       flex-wrap: nowrap
       justify-content: space-around
-      max-width: 1333px
+      max-width: 1600px
       margin: 0 auto
       padding: 26px 0 53px
       border-bottom: 1px solid #c4b176
@@ -171,8 +221,15 @@
   .nav__submenu__column
     flex: 0 0 auto
 
-  .nav__item_active .nav__submenu
-    display: block
+  .nav__submenu
+    opacity: 0
+    transition: opacity .05s ease-in 0.05s
+  .nav__item:hover
+    & > a
+      color: $primary-color
+    .nav__submenu
+      opacity: 1
+      visibility: visible
 
 +minDescop
   .nav .nav__item

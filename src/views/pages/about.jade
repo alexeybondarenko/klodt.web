@@ -1,9 +1,10 @@
 extends ../layouts/main
 
-
+block variables
+  - var page = 'about'
+  
 block content
-  include ../partials/header
-  article.about-page
+  .about-page
     .row
       .col-xs-12.col-lg-2.col-lg-offset-1.last-lg: .section-photo
         .photo
@@ -36,5 +37,3 @@ block content
           .section-content
             p This uniquely rounded approach means that both style and structure co-exist happily in every piece in the collection. Whether the statement chandelier with its five 25-kilogram glass orbs or the flowing silhouettes of the elliptical sofa or floor uplighter, concealed metal frames have enabled the designers to create pieces that deliver impact without compromising comfort or practicality.
         .col-lg-1.descop-border-right
-
-  include ../partials/footer
