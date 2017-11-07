@@ -23,7 +23,7 @@ gulp.task('delete', function (cb) {
     rimraf('./'+config.dest.root, cb);
 });
 gulp.task('default', ['build', 'server', 'watch']);
-gulp.task('build', sequence('delete',['html','images','copy','js','sass']));
+gulp.task('build', sequence('delete',['images','copy','js','sass']));
 
 gulp.task('deploy:build', sequence('build', 'font'))
 gulp.task('deploy', ['deploy:build'], function () {
