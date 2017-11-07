@@ -1,19 +1,20 @@
 
 .footer
+  @extend .in
+
   &__in
-    @extend .in
 
     border-top: 1px solid #c4b176
     padding-bottom: 35px
 
-    +minTablet
+    +minDescop
       padding-top: 50px
       padding-bottom: 80px
 
   .footer__in
     text-align: center
 
-  +minTablet
+  +minDescop
     .footer__in
       display: table
       width: 100%
@@ -29,15 +30,17 @@
 .footer-socials
   display: block
 
-  +maxTablet
+  +maxDescop
     text-align: center
 
-  +minTablet
+  +minDescop
     text-align: left
-    margin-left: -40px
+    margin-left: -20px
 
     .footer-socials__item:first-child
       margin-left: 0
+  +minDescop
+    margin-left: -40px
 
   &__item
     display: inline-block
@@ -46,14 +49,13 @@
     white-space: nowrap
     text-decoration: underline
 
-    +maxTablet
+    +maxDescop
       width: 100%
       margin-top: 36px
 
-    +minTablet
-      margin-top: 0
-      margin-left: 40px
+    +minDescop
       margin-top: 10px
+      margin-left: 40px
 
     .icon
       vertical-align: middle
@@ -88,9 +90,9 @@
     white-space: nowrap
     display: block
 
-    +maxTablet
+    +maxDescop
       margin-top: 36px
 
-    +minTablet
+    +minDescop
       display: inline-block
       margin-left: 40px

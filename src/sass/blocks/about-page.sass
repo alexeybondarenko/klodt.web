@@ -1,8 +1,11 @@
 
 .about-page
-  padding: 24px 0 40px
-  +minTablet
-    padding: 80px 133px 100px
+  padding-top: 24px
+  padding-bottom: 40px
+
+  +minDescop
+    padding-top: 80px
+    padding-bottom: 100px
 
 
 .section-title
@@ -18,74 +21,95 @@
     line-height: 40px
     margin-bottom: 33px
 
-.section
-  &_with-photo
-    +minTablet
-      display: flex
-      flex-direction: row
-      flex-wrap: nowrap
+.section-photo
+  @extend .in
 
-    .photo
-      img
-        width: 100%
+  .photo
+    img
+      width: 100%
 
-    .photo-caption
-      margin-top: 10px
+  .photo-caption
+    margin-top: 10px
 
-    .section__content
-      font-size: 16px
-      padding: 0 40px
-      +minTablet
-        font-size: 18px
-        padding: 0 133px
-        flex: 1 1 auto
-        order: 1
+.section-content
+  @extend .in-big
+  margin: 25px 0
+  font-size: 16px
+  +minDescop
+    margin: 0
+    font-size: 18px
 
-    .section__photo
-      position: relative
-      padding: 0 25px
-      margin-bottom: 30px
-
-      +minTablet
-        flex: 0 0 auto
-        padding: 0 133px
-        width: 532px
-        margin-bottom: 0
-        order: 2
-
-        &::before
-          content: ''
-          display: block
-          position: absolute
-          height: 100%
-          width: 1px
-          left: 0
-          top: 0
-          +vertical-gradient
-          margin-bottom: 50px
-
-    .section-block
-      margin-bottom: 44px
-      +minTablet
-        margin-bottom: 50px
-
-      p + p
-        margin-top: 30px
-        +minTablet
-          margin-top: 40px
-
-    .section-block + .section-block
-      &::before
-        content: ''
-        display: block
-        width: 100%
-        height: 1px
-        background: #C1B07A
-        background-image: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
-        margin-bottom: 50px
-
-  &_photo
+.section-block
+  & + &
     margin: 44px 0
-
     +minTablet
-      margin: 60px 0
+      margin: 50px 0
+
+  p + p
+    margin: 30px 0
+    +minTablet
+      margin: 40px 0
+
+.section-big-photo
+  margin: 44px 0
+  +minTablet
+    margin: 60px 0
+
+.section-border-right
+  position: relative
+  display: none
+  +minDescop
+    display: block
+
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    height: 100%
+    width: 1px
+    right: 0
+    top: 0
+    background-color: #c1b07a
+
+// .section
+//
+//
+//
+//
+//
+//
+//
+//     .section__photo
+//       position: relative
+//       padding: 0 25px
+//       margin-bottom: 30px
+//
+//       +minTablet
+//         flex: 0 0 auto
+//         padding: 0 133px
+//         width: 532px
+//         margin-bottom: 0
+//         order: 2
+//
+        // &::before
+        //   content: ''
+        //   display: block
+        //   position: absolute
+        //   height: 100%
+        //   width: 1px
+        //   left: 0
+        //   top: 0
+        //   +vertical-gradient
+        //   margin-bottom: 50px
+//
+//
+//
+//     .section-block + .section-block
+//       &::before
+//         content: ''
+//         display: block
+//         width: 100%
+//         height: 1px
+//         background: #C1B07A
+//         background-image: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)
+//         margin-bottom: 50px

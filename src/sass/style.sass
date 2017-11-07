@@ -23,7 +23,7 @@ $text-size: 14px
 $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
 
 =maxMobile
-  +r(320)
+  +r(319)
     @content
 
 =minMobile
@@ -31,19 +31,19 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
     @content
 
 =maxTablet
-  +r(768)
+  +r(767)
     @content
 
 =minTablet
-  +rm(769)
+  +rm(768)
     @content
 
 =maxDescop
-  +r(1024)
+  +r(1023)
     @content
 
 =minDescop
-  +rm(1025)
+  +rm(1024)
     @content
 
 =vertical-gradient
@@ -53,6 +53,41 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   transform: rotate(-180deg)
   background-color: #c1b07a
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%)
+
+.left-top-border-descop
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+
+  +maxDescop
+    &::before
+      height: 100%
+      width: 1px
+      +vertical-gradient
+  +minDescop
+    &::before
+      height: 1px
+      width: 100%
+      +hor-gradient
+
+.left-border-descop
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+
+  +minDescop
+    &::before
+      weight: 1px
+      height: 100%
+      +hor-gradient
 
 .pixel-perfect
   background-position: 0 0
@@ -80,13 +115,19 @@ body
   margin: 0 auto
 .in
   padding: 0 25px
-  +minTablet
+  +minDescop
+    padding: 0
+
+.in-big
+  padding: 0 40px
+  +minDescop
     padding: 0
 
 .disable-scroll
-  overflow: hidden
-  width: 100%
-  height: 100%
+  +maxDescop
+    overflow: hidden
+    width: 100%
+    height: 100%
 
 =gradient-text
   // color: $primary-color

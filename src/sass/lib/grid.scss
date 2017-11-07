@@ -2,11 +2,9 @@
 $flexboxgrid-grid-columns: 12;
 $flexboxgrid-gutter-width: 0;
 $flexboxgrid-outer-margin: 0;
-$flexboxgrid-breakpoints:
-  sm 48rem,
-  md 64rem,
-  lg 80rem,
-  xlg 90rem,
-  newbreakpoint 120rem;
+$breakpoints:
+  sm 320px 320px,
+  md 768px 768px,
+  lg 1024px 1024px;
 
 @import "../../../node_modules/flexboxgrid-sass/flexboxgrid.scss"
