@@ -27,8 +27,15 @@
       text-transform: uppercase
       margin-top: 14px
 
+      &:hover
+        color: $primary-color
+
     &_active > a
       color: $primary-color
+
+  &__submenu a:hover,
+  &__submenu > .nav__submenut-item.active
+    color: $primary-color
 
   &__logo
     position: relative
