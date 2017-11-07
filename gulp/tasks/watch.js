@@ -25,8 +25,8 @@ gulp.task('delete', function (cb) {
 gulp.task('default', ['build', 'server', 'watch']);
 gulp.task('build', sequence('delete',['html','images','copy','js','sass']));
 
-
-gulp.task('deploy', ['build'], function () {
+gulp.task('deploy:build', sequence('build', 'font'))
+gulp.task('deploy', ['deploy:build'], function () {
   return gulp.src([
       'build/**/*',
       'CNAME'

@@ -3,7 +3,7 @@
 
 console.log('App is running')
 
-$(document).ready(() => {
+$(document).ready(function () {
   $('.hamb').on('click', function() {
     $(this).toggleClass('hamb_active')
     $('.nav').toggleClass('nav_active')
