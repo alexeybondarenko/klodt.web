@@ -71,11 +71,17 @@ body
   font: $text-font
   color: $text-color
   letter-spacing: 0.86px
-  max-width: 1600px
-  margin: 0 auto
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+.wrap
+  max-width: 1333px
+  margin: 0 auto
+.in
+  padding: 0 25px
+  +minTablet
+    padding: 0
 
 .disable-scroll
   overflow: hidden

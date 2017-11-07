@@ -1,17 +1,14 @@
 
 .footer
-  +maxTablet
-    padding: 0 25px
-  +minTablet
-    padding: 0 133px
-
   &__in
-    border-top: 1px solid #c4b176
+    @extend .in
 
-    +maxTablet
-      padding-bottom: 35px
+    border-top: 1px solid #c4b176
+    padding-bottom: 35px
+
     +minTablet
-      padding: 50px 0 80px
+      padding-top: 50px
+      padding-bottom: 80px
 
   .footer__in
     text-align: center

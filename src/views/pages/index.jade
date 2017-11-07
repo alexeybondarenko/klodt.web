@@ -10,11 +10,11 @@ block content
     .index-block__header
       .text-title O&A LONDON DESIGNER FURNITURE COLLECTION
       p Survey Shows Two Thirds Of Migraine Sufferers Dissatisfied
-    .index-block__gallery.index-gallery
-      a.index-gallery__item(href="#item-1")
+    .index-block__gallery.index-gallery: .row
+      .col-sm-5.col-md-offset-1: a.index-gallery__item(href="#item-1")
         img(src="/img/products/meissa.png", alt="Meissa")
         .text Meissa
-      a.index-gallery__item(href="#item-1")
+      .col-sm-5: a.index-gallery__item(href="#item-1")
         img(src="/img/products/metallah.png", alt="Metallah")
         .text Metallah
   include ../partials/footer
