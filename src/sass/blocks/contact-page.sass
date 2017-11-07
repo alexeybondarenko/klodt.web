@@ -9,6 +9,8 @@
 
     +minDescop
       height: 100%
+      margin-left: 25px
+      padding-left: 25px
 
       &::after
         content: ''
@@ -16,9 +18,12 @@
         position: absolute
         height: 100%
         width: 1px
-        left: -12.25%
+        left: 0
         top: 0
         background-color: #c1b07a
+    +minWideDescop
+      padding-left: 50px
+      margin-left: 50px
 
 
   &__left
@@ -26,6 +31,17 @@
     padding: 40px 25px
     +minDescop
       padding: 0
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      flex-wrap: nowrap
+      min-height: 100%
+
+      .contact-page__contacts
+        flex: 1 1 auto
+      .contact-page__press
+        flex: 0 0 auto
+
 
     .text-subtitle
       margin-bottom: 15px

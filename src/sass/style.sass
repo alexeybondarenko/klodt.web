@@ -46,6 +46,10 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
   +rm(1024)
     @content
 
+=minWideDescop
+  +rm(1400)
+    @content
+
 =vertical-gradient
   background-color: #c1b07a
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%)
@@ -121,13 +125,12 @@ $text-font: 400 #{$text-size}/1.2 'Quasimoda', Georgia, 'Helvetica Neue', 'Helve
 body
   font: $text-font
   color: $text-color
-  letter-spacing: 0.86px
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 .wrap
-  max-width: 1333px
+  max-width: 1600px
   margin: 0 auto
   overflow: hidden
 
@@ -177,11 +180,11 @@ body
   color: #c0b07c
   font-size: 20px
   line-height: 24px
+  letter-spacing: 0.86px
 
   +minTablet
     font-size: 22px
 
-  letter-spacing: 0.61px
   text-transform: uppercase
   text-align: center
 
@@ -191,6 +194,8 @@ body
 
   text-transform: uppercase
   font-size: 20px
+  letter-spacing: 0.86px
+
   +minTablet
     font-size: 22px
 

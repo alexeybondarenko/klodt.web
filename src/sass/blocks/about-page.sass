@@ -7,7 +7,6 @@
     padding-top: 80px
     padding-bottom: 100px
 
-
 .section-title
   +tenor
   color: #c0b07c
@@ -40,21 +39,34 @@
 .section-content
   @extend .in-big
   margin-top: 25px
-  +minDescop
-    margin-top: 0
+  +minTablet
+    margin-top: 40px
 
   font-size: 16px
   +minDescop
     font-size: 18px
+    line-height: 30px
 
   &.no-margin
     margin-top: 0
+  &.no-margin-descop
+    +minDescop
+      margin-top: 0
 
 .section-block
   & + &
     margin-top: 44px
+
     +minTablet
       margin-top: 50px
+
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        background-color: #c1b07a
+        margin-bottom: 50px
 
   p + p
     margin-top: 30px
