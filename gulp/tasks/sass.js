@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var notify = require('gulp-notify');
@@ -18,21 +18,16 @@ gulp.task('sass', function() {
             sort: function (a, b) {
                 a = a.replace(/\D/g,'');
                 b = b.replace(/\D/g,'');
-                return b-a;
-                // replace this with a-b for Mobile First approach
+                return a-b;
             }
         })
     ];
 
-      return sass(config.src.sass+'style.sass', {
-        sourcemap: true,
-        style: 'compact',
-        emitCompileError: true
-      })
-    .on('error', notify.onError({
+    return gulp.src(config.src.sass+'*.sass')
+    .pipe(sass().on('error', notify.onError({
       title: 'Sass Error!',
       message: '<%= error.message %>'
-    }))
+    })))
     .pipe(postcss(processors))
     .pipe(concatCss('style.css'))
     .pipe(cleanCSS({compatibility: 'ie8'}))

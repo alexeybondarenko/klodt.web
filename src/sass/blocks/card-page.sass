@@ -1,13 +1,18 @@
 
 .card-page
   padding-bottom: 45px
+
   +minTablet
-    padding: 0 133px
+    padding: 0 25px 45px
+
+  +minDescop
+    padding: 0
 
   &__breadcrumbs
     display: none
+    padding: 40px 0 30px
+
     +minTablet
-      padding: 40px 0 30px
       display: block
 
   &__item
@@ -18,9 +23,11 @@
 
 
     +minTablet
-      margin-top: 150px
       padding: 0
       padding-bottom: 100px
+
+    +minDescop
+      margin-top: 150px
 
     .other-products
       margin-top: 30px
@@ -156,7 +163,6 @@
 
   &::before
     content: ''
-    position: absolute
     display: block
     width: 100%
     top: 0
