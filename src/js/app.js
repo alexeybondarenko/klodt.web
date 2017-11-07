@@ -29,5 +29,29 @@ $(document).ready(() => {
       appendDots: $(this).find('.slider__dots')
     });
   })
-  // $('.hamb').click()
+
+  $('.gallery').each(function () {
+    var $this = $(this)
+    var $previews = $(this).find('.gallery-previews .gallery-previews__item')
+    var slickInstance = $this.find('.gallery-image__images').slick({
+      infinite: true,
+      arrows: false,
+    })
+    $(this).find('.gallery-image__arrow-left').on('click', function () {
+      slickInstance.slick('slickPrev')
+    })
+    $(this).find('.gallery-image__arrow-right').on('click', function () {
+      slickInstance.slick('slickNext')
+    })
+    slickInstance.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      console.log('afterChange', slick, currentSlide)
+      $previews.removeClass('active')
+      $previews.eq(currentSlide).addClass('active')
+    })
+    $previews.on('click', function () {
+      var index = $previews.index(this)
+      slickInstance.slick('slickGoTo', index + 1)
+    })
+    slickInstance.slick('slickGoTo', 1)
+  })
 })

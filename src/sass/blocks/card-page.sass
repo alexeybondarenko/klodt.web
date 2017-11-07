@@ -46,6 +46,7 @@
 
   &__gallery
     +minTablet
+      overflow: hidden
       flex: 1 1 auto
 
   &__description
@@ -84,7 +85,7 @@
 .gallery-image
   position: relative
 
-  &__image
+  &__images
     width: 100%
     font-size: 0
     position: relative
@@ -133,6 +134,10 @@
     height: 100px
     margin-left: 10px
     margin-top: 10px
+    opacity: 0.3
+
+    &.active
+      opacity: 1
 
 .card-info
   padding: 0 15px
