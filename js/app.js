@@ -2957,7 +2957,7 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
 console.log('App is running')
 
-$(document).ready(() => {
+$(document).ready(function () {
   $('.hamb').on('click', function() {
     $(this).toggleClass('hamb_active')
     $('.nav').toggleClass('nav_active')
