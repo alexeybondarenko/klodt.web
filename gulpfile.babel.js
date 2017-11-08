@@ -88,10 +88,10 @@ gulp.task('dev', (done) => {
 gulp.task('prefix', () => (
   gulp.src(`./_site/**/*.html`)
   .pipe($.prefix('/klodt.web', [
+    {match: "img[src]", attr: "src"},
     {match: "a[href]", attr: "href"}, // this selector was added to the default set of selectors
     {match: "script[src]", attr: "src"},
     {match: "link[href]", attr: "href"},
-    {match: "img[src]", attr: "src"},
     {match: "input[src]", attr: "src"},
     {match: "img[data-ng-src]", attr: "data-ng-src"}
   ]))

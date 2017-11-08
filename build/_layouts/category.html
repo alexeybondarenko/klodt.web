@@ -25,8 +25,7 @@ page: collection
           {% for product in site.products %}
             {% if (product.categories contains page.name) %}
               <a href="{{ product.url }}" class="item {% if product.preview.doubled %} item_doubled {% endif %}">
-                {{ product.preview }}
-                <img src="{{ product.preview['url'] }}"/>
+                <img src="{{ product.preview.url }}"/>
               </a>
             {% endif %}
           {% endfor %}

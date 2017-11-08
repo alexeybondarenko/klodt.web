@@ -41,7 +41,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "~6.0.0",
-    "gulp-prefix": "0.0.15",
+    "gulp-prefix": "github:alexeybondarenko/gulp-prefix#090bd364bce95205d66e4b8ee6992c762e79e45b",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-ruby-sass": "~2.0.3",
