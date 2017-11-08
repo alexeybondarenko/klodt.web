@@ -5,9 +5,18 @@ collections:
     title: Products
     output: true
     permalink: /:collection/:name/
+  categories:
+    title: Categories
+    output: true
+    permalink: /:collection/:name/
 defaults:
 - scope:
     path: ''
     type: products
   values:
     layout: product
+- scope:
+    path: ''
+    type: categories
+  values:
+    layout: category

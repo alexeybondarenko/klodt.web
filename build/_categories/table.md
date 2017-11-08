@@ -1,0 +1,4 @@
+---
+title: Table
+name: table
+---
