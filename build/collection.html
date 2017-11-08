@@ -14,21 +14,9 @@ page: collection
         <div class="categories-block">
           <div class="text-subtitle">Categories</div>
           <ul class="list">
-            <li><a href="#">Armchair</a></li>
-            <li><a href="#">Cabinet</a></li>
-            <li><a href="#">Casket</a></li>
-            <li><a href="#">Chair</a></li>
-            <li><a href="#">Chandelier</a></li>
-            <li><a href="#">Console</a></li>
-            <li><a href="#">Floor lamp</a></li>
-            <li><a href="#">Mirror</a></li>
-            <li><a href="#">Night table</a></li>
-            <li><a href="#">Pouffe</a></li>
-            <li><a href="#">Sofa</a></li>
-            <li><a href="#">Table</a></li>
-            <li><a href="#">Table lamp</a></li>
-            <li><a href="#">Vase</a></li>
-            <li><a href="#">Wall light</a></li>
+            {% for category in site.data.categories %}
+            <li><a href="/collection.html#{{ category.name }}">{{ category.title }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>

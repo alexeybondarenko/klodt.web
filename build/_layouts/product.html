@@ -1,0 +1,55 @@
+---
+layout: default
+page: collection
+---
+<div class="card-page">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+      <div class="card-page__breadcrumbs">
+        <div class="breadcrumbs"><a href="/collection.html" class="breadcrumbs__item">Collections</a><a href="/card.html" class="breadcrumbs__item breadcrumbs__item_active">PICTOR I</a></div>
+      </div>
+      <div class="card-page__item">
+        <div class="card-item-block">
+          <div class="card-item-block__gallery">
+            <div class="gallery">
+              <div class="gallery__image">
+                <div class="gallery-image">
+                  <div class="gallery-image__images">
+                    {% for image in page.images %}
+                    <div class="gallery-image__image"><img src="{{image}}"/></div>
+                    {% endfor %}
+                  </div>
+                  <div class="gallery-image__arrows"><a href="#arrow-left" class="gallery-image__arrow-left"></a><a href="#arrow-right" class="gallery-image__arrow-right"></a></div>
+                </div>
+              </div>
+              <div class="gallery__previews">
+                <div class="gallery-previews">
+                  {% for image in page.images %}
+                    <a href="#preview-1" class="gallery-previews__item"><img src="{{image}}"/></a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-item-block__description">
+            <div class="card-info">
+              <div class="text-subtitle">{{ page.title }}</div>
+              <div class="text">
+                <p>{{ content }}</p>
+              </div>
+            </div>
+            <div class="card-sizes">
+              {% for measurement in page.measurements %}
+                <p>{{ measurement }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-page__other-products">
+        <div class="text-title">Other products</div>
+        <div class="other-products"><a href="/card.html#product-1" class="other-products__item"><img src="https://picsum.photos/g/600/600"/></a><a href="/card.html#product-2" class="other-products__item"><img src="https://picsum.photos/g/600/600"/></a><a href="/card.html#product-3" class="other-products__item"><img src="https://picsum.photos/g/600/600"/></a></div>
+      </div>
+    </div>
+  </div>
+</div>

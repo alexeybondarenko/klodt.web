@@ -11,12 +11,12 @@
             </div>
             <div class="nav__menu__items">
               <div class="nav__left">
-                <div class="nav__item nav__item_active"><a href="/index.html">Home</a></div>
-                <div class="nav__item nav__item_active"><a href="/about.html">About</a></div>
+                <div class="nav__item {% if (page.page == 'home') %} nav__item_active {% endif %}"><a href="/index.html">Home</a></div>
+                <div class="nav__item {% if (page.page == 'about') %} nav__item_active {% endif %}"><a href="/about.html">About</a></div>
               </div>
               <div class="nav__right">
-                <div class="nav__item nav__item_active nav__item_with-submenu"><a href="/collection.html">Collection</a>{% include collection-submenu.html %}   </div>
-                <div class="nav__item nav__item_active"><a href="/contact.html">Contact</a></div>
+                <div class="nav__item {% if (page.page == 'collection') %} nav__item_active {% endif %} nav__item_with-submenu"><a href="/collection.html">Collection</a>{% include collection-submenu.html %}   </div>
+                <div class="nav__item {% if (page.page == 'contact') %} nav__item_active {% endif %}"><a href="/contact.html">Contact</a></div>
               </div>
             </div>
           </div>

@@ -1,33 +1,13 @@
 <div class="nav__submenu">
   <div class="nav__submenu__in">
-    <div class="nav__submenu__column">
-      <div class="nav__submenu-item"><a href="/collection.html#all">All</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#armchair">Armchair</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#cabinet">Cabinet</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#casket">Casket</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#chair">Chair</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#chandelier">Chandelier</a></div>
-    </div>
-    <div class="nav__submenu__column">
-      <div class="nav__submenu-item"><a href="/collection.html#console">Console</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#floor-lamp">Floor lamp</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#mirror">Mirror</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#night-table">Night table</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#pouffe">Pouffe</a></div>
-    </div>
-    <div class="nav__submenu__column">
-      <div class="nav__submenu-item"><a href="/collection.html#sofa">Sofa</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#table">Table</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#table-lamp">Table lamp</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#vase">Vase</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#wall-light">Wall light</a></div>
-    </div>
-    <div class="nav__submenu__column">
-      <div class="nav__submenu-item"><a href="/collection.html#armchair">Armchair</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#cabinet">Cabinet</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#casket">Casket</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#chair">Chair</a></div>
-      <div class="nav__submenu-item"><a href="/collection.html#chandelier">Chandelier</a></div>
-    </div>
+    {% assign columnSize = site.data.categories.size | divided_by: 4.0 | ceil %}
+    {% for columnIndex in (0...3) %}
+      <div class="nav__submenu__column">
+        {% assign offset = columnSize | times: columnIndex %}
+        {% for category in site.data.categories limit:columnSize offset:offset %}
+          <div class="nav__submenu-item"><a href="/collection.html#{{ category.name }}">{{ category.title }}</a></div>
+        {% endfor %}
+      </div>
+    {% endfor %}
   </div>
 </div>
