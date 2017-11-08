@@ -2,40 +2,41 @@
 layout: default
 page: collection
 ---
-
-<div class="quotation-block">
-  <div class="text">CONVINCE THE WORLD THAT THERE MAY BE, THERE ARE, THINGS MORE PRECIOUS, MORE BEAUTIFUL, MORE LASTING THAN LIFE ITSELF</div>
-  <div class="author">Charles Rennie Mackintosh</div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-    <article class="collection-page">
-      <div class="collection-page__categories">
-        <div class="categories-block">
-          <div class="text-subtitle">Categories</div>
-          <ul class="list">
-            {% for category in site.categories %}
-              <li class="{% if (page.name == category.name) %} active {% endif %}"><a href="{{ category.url }}">{{ category.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="collection-page__gallery">
-        <div class="collection-gallery">
-          {% for product in site.products %}
-            {% if (product.categories contains page.name) %}
-              <a href="{{ product.url }}" class="item {% if product.preview.doubled %} item_doubled {% endif %}">
-                <img src="{{ product.preview.url }}"/>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-        <!-- <div class="collection-page__loader">
-          <div class="collection-gallery-loader">
-            <img src="/img/loader@2x.png"/>
+<div class="wrap">
+  <div class="quotation-block">
+    <div class="text">CONVINCE THE WORLD THAT THERE MAY BE, THERE ARE, THINGS MORE PRECIOUS, MORE BEAUTIFUL, MORE LASTING THAN LIFE ITSELF</div>
+    <div class="author">Charles Rennie Mackintosh</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+      <article class="collection-page">
+        <div class="collection-page__categories">
+          <div class="categories-block">
+            <div class="text-subtitle">Categories</div>
+            <ul class="list">
+              {% for category in site.categories %}
+                <li class="{% if (page.name == category.name) %} active {% endif %}"><a href="{{ category.url }}">{{ category.title }}</a></li>
+              {% endfor %}
+            </ul>
           </div>
-        </div> -->
-      </div>
-    </article>
+        </div>
+        <div class="collection-page__gallery">
+          <div class="collection-gallery">
+            {% for product in site.products %}
+              {% if (product.categories contains page.name) %}
+                <a href="{{ product.url }}" class="item {% if product.preview.doubled %} item_doubled {% endif %}">
+                  <img src="{{ product.preview.url }}"/>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <!-- <div class="collection-page__loader">
+            <div class="collection-gallery-loader">
+              <img src="/img/loader@2x.png"/>
+            </div>
+          </div> -->
+        </div>
+      </article>
+    </div>
   </div>
 </div>

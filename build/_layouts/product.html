@@ -2,64 +2,66 @@
 layout: default
 page: collection
 ---
-<div class="card-page">
-  <div class="row">
-    <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-      <div class="card-page__breadcrumbs">
-        <div class="breadcrumbs"><a href="/categories/all" class="breadcrumbs__item">Collections</a><a href="{{ page.url }}" class="breadcrumbs__item breadcrumbs__item_active">{{ page.title }}</a></div>
-      </div>
-      <div class="card-page__item">
-        <div class="card-item-block">
-          <div class="card-item-block__gallery">
-            <div class="gallery">
-              <div class="gallery__image">
-                <div class="gallery-image">
-                  <div class="gallery-image__images">
+<div class="wrap">
+  <div class="card-page">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div class="card-page__breadcrumbs">
+          <div class="breadcrumbs"><a href="/categories/all" class="breadcrumbs__item">Collections</a><a href="{{ page.url }}" class="breadcrumbs__item breadcrumbs__item_active">{{ page.title }}</a></div>
+        </div>
+        <div class="card-page__item">
+          <div class="card-item-block">
+            <div class="card-item-block__gallery">
+              <div class="gallery">
+                <div class="gallery__image">
+                  <div class="gallery-image">
+                    <div class="gallery-image__images">
+                      {% for image in page.images %}
+                      <div class="gallery-image__image"><img src="{{image.album}}"/></div>
+                      {% endfor %}
+                    </div>
+                    <div class="gallery-image__arrows"><a href="#arrow-left" class="gallery-image__arrow-left"></a><a href="#arrow-right" class="gallery-image__arrow-right"></a></div>
+                  </div>
+                </div>
+                <div class="gallery__previews">
+                  <div class="gallery-previews">
                     {% for image in page.images %}
-                    <div class="gallery-image__image"><img src="{{image.album}}"/></div>
+                      <a href="#preview-1" class="gallery-previews__item"><img src="{{image.square}}"/></a>
                     {% endfor %}
                   </div>
-                  <div class="gallery-image__arrows"><a href="#arrow-left" class="gallery-image__arrow-left"></a><a href="#arrow-right" class="gallery-image__arrow-right"></a></div>
-                </div>
-              </div>
-              <div class="gallery__previews">
-                <div class="gallery-previews">
-                  {% for image in page.images %}
-                    <a href="#preview-1" class="gallery-previews__item"><img src="{{image.square}}"/></a>
-                  {% endfor %}
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card-item-block__description">
-            <div class="card-info">
-              <div class="text-subtitle">{{ page.title }}</div>
-              <div class="text">
-                <p>{{ content }}</p>
+            <div class="card-item-block__description">
+              <div class="card-info">
+                <div class="text-subtitle">{{ page.title }}</div>
+                <div class="text">
+                  <p>{{ content }}</p>
+                </div>
               </div>
-            </div>
-            <div class="card-sizes">
-              {% for measurement in page.measurements %}
-                <p>{{ measurement }}</p>
-              {% endfor %}
+              <div class="card-sizes">
+                {% for measurement in page.measurements %}
+                  <p>{{ measurement }}</p>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-page__other-products">
-        <div class="text-title">Other products</div>
-        <div class="other-products">
-          {% for index in (1..3) %}
-            {% assign min = 0 %}
-            {% assign max = site.products.size %}
-            {% assign diff = max | minus: min %}
-            {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+        <div class="card-page__other-products">
+          <div class="text-title">Other products</div>
+          <div class="other-products">
+            {% for index in (1..3) %}
+              {% assign min = 0 %}
+              {% assign max = site.products.size %}
+              {% assign diff = max | minus: min %}
+              {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
 
-            {% assign product = site.products[randomNumber] %}
-            <a href="{{ product.url }}" class="other-products__item">
-              <img src="{{ product.images[0].square }}"/>
-            </a>
-          {% endfor %}
+              {% assign product = site.products[randomNumber] %}
+              <a href="{{ product.url }}" class="other-products__item">
+                <img src="{{ product.images[0].square }}"/>
+              </a>
+            {% endfor %}
+        </div>
       </div>
     </div>
   </div>
