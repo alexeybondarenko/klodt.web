@@ -5,8 +5,8 @@ measurements:
  - Width  — 2700 mm
  - Depth  — 790 mm
 preview:
- url: /img/Catalogue/Squares/Alnilam 1 - Sofa.jpg
- doubled: false
+ url: /img/Catalogue/Catalogue-(1-item)-Alnilam-1---Sofa.jpg
+ doubled: true
 categories:
 - sofa
 - all
