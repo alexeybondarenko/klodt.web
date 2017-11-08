@@ -1,13 +1,15 @@
 <div class="nav__submenu">
   <div class="nav__submenu__in">
-    {% assign columnSize = site.categories.size | divided_by: 4.0 | ceil %}
-    {% for columnIndex in (0...3) %}
-      <div class="nav__submenu__column">
-        {% assign offset = columnSize | times: columnIndex %}
-        {% for category in site.categories limit:columnSize offset:offset %}
-          <div class="nav__submenu-item"><a href="{{ category.url }}">{{ category.title }}</a></div>
-        {% endfor %}
+    <div class="nav__submenu__in__content">
+      {% assign columnSize = site.categories.size | divided_by: 4.0 | ceil %}
+      {% for columnIndex in (0...3) %}
+        <div class="nav__submenu__column">
+          {% assign offset = columnSize | times: columnIndex %}
+          {% for category in site.categories limit:columnSize offset:offset %}
+            <div class="nav__submenu-item"><a href="{{ category.url }}">{{ category.title }}</a></div>
+          {% endfor %}
+        </div>
+      {% endfor %}
       </div>
-    {% endfor %}
   </div>
 </div>
