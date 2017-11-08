@@ -8,13 +8,13 @@ categories:
 - floor-lamp
 - all
 preview:
-  url: /img/Catalogue/Squares/Mintaka - Lamp.jpg
+  url: /img/Catalogue/Squares/Mintaka 3 - Lamp.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Mintaka - Lamp.jpg
   square: /img/Catalogue/Squares/Mintaka - Lamp.jpg
-- album: /img/Catalogue/Full Width/Mintaka 2 - Lamp.jpg
-  square: /img/Catalogue/Squares/Mintaka 2 - Lamp.jpg
+- album: /img/Catalogue/Full Width/Mintaka 2 – Lamp.jpg
+  square: /img/Catalogue/Squares/Mintaka 2 – Lamp.jpg
 - album: /img/Catalogue/Full Width/Mintaka 3 - Lamp.jpg
   square: /img/Catalogue/Squares/Mintaka 3 - Lamp.jpg
 - album: /img/Catalogue/Full Width/Mintaka 4 - Lamp.jpg

@@ -8,7 +8,7 @@ categories:
 - wall-light
 - all
 preview:
-  url: /img/Catalogue/Squares/Vega - Wall Light.jpg
+  url: /img/Catalogue/Squares/Vega 3 - Wall Light.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Vega - Wall Light.jpg

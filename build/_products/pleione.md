@@ -8,7 +8,7 @@ categories:
 - table
 - all
 preview:
-  url: /img/Catalogue/Squares/Pleione - Table.jpg
+  url: /img/Catalogue/Squares/Pleione 4 - Table.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Pleione - Table.jpg

@@ -8,7 +8,7 @@ categories:
 - table
 - all
 preview:
-  url: /img/Catalogue/Squares/Theemin - Table.jpg
+  url: /img/Catalogue/Squares/Theemin 2 - Table.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Theemin - Table.jpg

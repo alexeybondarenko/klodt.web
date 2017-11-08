@@ -8,7 +8,7 @@ categories:
 - armchair
 - all
 preview:
-  url: /img/Catalogue/Squares/Pictor I – Arcmchair.jpg
+  url: /img/Catalogue/Squares/Pictor I – Arcmchair 2.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Pictor I – Arcmchair.jpg

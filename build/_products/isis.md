@@ -8,7 +8,7 @@ categories:
 - console
 - all
 preview:
-  url: /img/Catalogue/Squares/Isis - Console.jpg
+  url: /img/Catalogue/Squares/Isis 4 - Console.jpg
   doubled: false
 images:
 - album: /img/Catalogue/Full Width/Isis - Console.jpg

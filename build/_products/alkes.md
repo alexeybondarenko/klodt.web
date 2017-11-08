@@ -5,7 +5,7 @@ measurements:
  - Width  — 1700 mm
  - Depth  — 470 mm
 preview:
-  url: /img/Catalogue/Squares/Alkes - Console.jpg
+  url: /img/Catalogue/Squares/Alkes 2 - Console.jpg
   doubled: false
 categories:
 - console

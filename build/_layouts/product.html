@@ -57,8 +57,9 @@ page: collection
               {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
 
               {% assign product = site.products[randomNumber] %}
+
               <a href="{{ product.url }}" class="other-products__item">
-                <img src="{{ product.images[0].square }}"/>
+                <img src="{% if (product.preview.doubled) %}{{ product.images[0].square }}{% else %}{{ product.preview.url }}{% endif %}"/>
               </a>
             {% endfor %}
         </div>
