@@ -3014,14 +3014,13 @@ $(document).ready(function () {
       slickInstance.slick('slickNext')
     })
     slickInstance.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-      console.log('afterChange', slick, currentSlide)
       $previews.removeClass('active')
-      $previews.eq(currentSlide).addClass('active')
+      $previews.eq(nextSlide).addClass('active')
     })
     $previews.on('click', function () {
       var index = $previews.index(this)
-      slickInstance.slick('slickGoTo', index + 1)
+      slickInstance.slick('slickGoTo', index)
     })
-    slickInstance.slick('slickGoTo', 1)
+    slickInstance.slick('slickGoTo', 0)
   })
 })
