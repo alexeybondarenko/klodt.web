@@ -4,9 +4,9 @@
   position: relative
   background-color: white
   line-height: 0
+  z-index: 21
 
   &__in
-    position: relative
     box-shadow: 0 1px 0 0 #c4b176
 
 .nav-submenu-backdrop
@@ -24,11 +24,8 @@
   transition: none
 
 .nav-submenu-openned
-  overflow: hidden
-  max-height: 100vh
   .nav-submenu-backdrop
     opacity: .8
-
     transition: opacity .15s ease-in
 
   .header__in
@@ -82,8 +79,9 @@
 
   .nav__hamb
     position: absolute
-    left: 20px
-    top: 21px
+    padding: 20px
+    top: 0
+    left: 0
 
   .nav__menu
     -webkit-overflow-scrolling: touch
@@ -126,11 +124,14 @@
     .nav__menu__items
       display: block
       visibility: visible
+      overflow-y: auto
+      padding-top: 185px
+      padding-bottom: 100px
       opacity: 1
+      height: 100vh
 
     .nav__menu
       font-size: 20px
-      padding-top: 185px
       position: fixed
       height: 100vh
       top: 0
@@ -138,14 +139,10 @@
       width: 100%
       background: white
       z-index: 999
-      overflow-y: auto
-      padding-bottom: 100px
       opacity: 1
 
     .nav__center
       opacity: 0
-    .nav__hamb
-      position: fixed
 
   .nav__item_with-submenu.nav__item_active-submenu > a
     color: $text-color
@@ -157,27 +154,34 @@
     padding: 16px 0 15px
     height: 80px
 
-  .nav__logo img
-    width: 80px
-    height: 49px
+  .nav
+    width: 100%
+
+  .nav__logo
+    z-index: 10
+
+    img
+      width: 80px
+      height: 49px
 
   .nav__hamb
     display: none
 
-  .nav__left,
-  .nav__right
-    display: block
-    position: absolute
-    top: 16px
-    width: 50%
+  .nav__menu
+    width: 100%
+    margin-top: -50px
+    &__items
+      display: flex
 
   .nav__left
-    right: 50%
+    flex: 0 0 50%
+    width: 50%
     text-align: right
     padding-right: 85px
 
   .nav__right
-    left: 50%
+    flex: 0 0 auto
+    width: 50%
     text-align: left
     padding-left: 85px
 
@@ -195,13 +199,16 @@
 
   .nav__submenu
     visibility: hidden
-    position: fixed
+    opacity: 0
+    position: absolute
     width: 100%
     background: white
     left: 0
     right: 0
-    top: 79px
-    z-index: 100
+    top: 100%
+    z-index: 2
+    transition: opacity .05s ease-in 0.05s
+    text-align: left
 
     &::before
       content: ''
@@ -229,9 +236,6 @@
   .nav__submenu__column
     flex: 0 0 auto
 
-  .nav__submenu
-    opacity: 0
-    transition: opacity .05s ease-in 0.05s
   .nav__item:hover
     & > a
       color: $primary-color
