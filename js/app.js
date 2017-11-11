@@ -2975,7 +2975,7 @@ $(document).ready(function () {
   })
 
   function isMobileNav () {
-    return $(document).width() < 1024;
+    return document.body.offsetWidth < 1024;
   }
 
   $('.nav__item_with-submenu > a').on('click', function (e) {
