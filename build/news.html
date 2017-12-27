@@ -1,0 +1,34 @@
+---
+layout: default
+page: news
+---
+<div class="wrap">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+      <article class="news-list-page">
+        <div class="news-list-page__list">
+          <div class="row">
+            {% for news in site.news %}
+              <div class="col-xs-12 col-md-6 col-lg-4">
+                <a href="{{ news.url }}" class="news-block">
+                  <img class="news-block__image" src="{{ news.image }}" alt="">
+                  <h4 class="news-block__title">
+                    {{ news.title }}
+                  </h4>
+                  <div class="news-block__subtitle">
+                    {{ news.date | date_to_string }}
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="news-list-page__loader">
+          <div class="collection-gallery-loader">
+            <img src="/img/loader@2x.png"/>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
