@@ -81,6 +81,11 @@
   &__image
   &__previews
     margin-top: 10px
+  &__slider-indicator
+    font-size: 14px
+    padding: 10px 0
+    text-align: center
+
 
 .gallery-image
   position: relative
@@ -108,6 +113,14 @@
     +minTablet
       display: block
 
+    &_outside
+      left: -50px
+      right: -50px
+
+    &_thin
+      .gallery-image__arrow-left,
+      .gallery-image__arrow-right
+        @extend .icon-thin-carret-right
 
   &__arrow-left,
   &__arrow-right

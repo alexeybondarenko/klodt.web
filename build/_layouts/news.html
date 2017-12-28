@@ -1,7 +1,110 @@
 ---
 layout: default
+page: news
 ---
 <div class="wrap">
   <div class="news-page">
+    <div class="news-page__top">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div class="news-page__breadcrumbs">
+            <div class="breadcrumbs">
+              <a href="/news/all" class="breadcrumbs__item">News</a>
+              <a href="{{ page.url }}" class="breadcrumbs__item breadcrumbs__item_active">
+                {{ page.title }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div class="section-big-photo section-big-photo_no-top-margin">
+            <div class="with-signature">
+              <img src="/img/About/About-Big.png"/>
+              <!-- <div class="signature"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-2 col-lg-offset-1 last-lg">
+          <div class="section-photo">
+            <div class="photo"><img src="/img/About/About-Meissa.png"/></div>
+            <div class="photo-caption">Meissa lightning</div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-lg-4 col-lg-offset-2">
+          <div class="section-content no-margin-descop with-padding-bottom">
+            <div class="section-block">
+              <div class="section-block__title">
+                <div class="section-title">O&A LONDON FURNITURE COLLECTION</div>
+                <div class="section-subtitle">{{ page.date | date_to_string }}</div>
+              </div>
+              <p>The O&A London furniture collection was created by the leading design team of Oleg Klodt and Anna Agapova. With their focus on the very nest details and on combining time-honoured and pioneering methods and materials, they are renowned for producing one-off pieces that harmonise effortlessly with their setting. This is the hallmark of O&A London.</p>
+              <p>The O&A London furniture collection was created by the leading design team of Oleg Klodt and Anna Agapova. With their focus on the very nest details and on combining time-honoured and pioneering methods and materials, they are renowned for producing one-off pieces that harmonise effortlessly with their setting. This is the hallmark of O&A London.</p>
+              {% if page.images %}
+              <div class="section-block__gallery">
+                <div class="gallery gallery_arrow-outside">
+                  <div class="gallery__image">
+                    <div class="gallery-image">
+                      <div class="gallery-image__images">
+                        {% for image in page.images %}
+                        <div class="gallery-image__image"><img src="{{image}}"/></div>
+                        {% endfor %}
+                      </div>
+                      <div class="gallery-image__arrows gallery-image__arrows_outside gallery-image__arrows_thin">
+                        <a href="#arrow-left" class="gallery-image__arrow-left"></a>
+                        <a href="#arrow-right" class="gallery-image__arrow-right"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="gallery__slider-indicator">
+                    1/6
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              <p>The O&A London furniture collection was created by the leading design team of Oleg Klodt and Anna Agapova. With their focus on the very nest details and on combining time-honoured and pioneering methods and materials, they are renowned for producing one-off pieces that harmonise effortlessly with their setting. This is the hallmark of O&A London.</p>
+              <p>The O&A London furniture collection was created by the leading design team of Oleg Klodt and Anna Agapova. With their focus on the very nest details and on combining time-honoured and pioneering methods and materials, they are renowned for producing one-off pieces that harmonise effortlessly with their setting. This is the hallmark of O&A London.</p>
+              <p>The O&A London furniture collection was created by the leading design team of Oleg Klodt and Anna Agapova. With their focus on the very nest details and on combining time-honoured and pioneering methods and materials, they are renowned for producing one-off pieces that harmonise effortlessly with their setting. This is the hallmark of O&A London.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1 descop-border-right"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-4 col-lg-offset-2">
+          <div class="section-footer">
+            {% include socials.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div class="news-page__updates">
+          <div class="text-title">Latest updates</div>
+          <div class="news-page__updates-list">
+            <div class="row news-list">
+              {% assign other_news = site.news | slice:0, 3 %}
+              {% for news in other_news %}
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                  <a href="{{ news.url }}" class="news-block news-list__item">
+                    <img class="news-block__image" src="{{ news.image }}" alt="">
+                    <h4 class="news-block__title">
+                      {{ news.title }}
+                    </h4>
+                    <div class="news-block__subtitle">
+                      {{ news.date | date_to_string }}
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

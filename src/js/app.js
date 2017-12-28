@@ -47,8 +47,21 @@ $(document).ready(function () {
   })
 
   $('.gallery').each(function () {
+    $(this).find('.gallery__items').slick({
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      dots: true,
+      arrows: false,
+      // appendDots: $(this).find('.slider__dots')
+    });
+  })
+
+  $('.gallery').each(function () {
     var $this = $(this)
     var $previews = $(this).find('.gallery-previews .gallery-previews__item')
+    var $sliderIndicators = $(this).find('.gallery__slider-indicator')
+    var $items = $(this).find('.gallery-image__image')
     var slickInstance = $this.find('.gallery-image__images').slick({
       infinite: true,
       arrows: false,
@@ -62,6 +75,7 @@ $(document).ready(function () {
     slickInstance.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       $previews.removeClass('active')
       $previews.eq(nextSlide).addClass('active')
+      $sliderIndicators.text(`${nextSlide + 1}/${$items.length}`)
     })
     $previews.on('click', function () {
       var index = $previews.index(this)
