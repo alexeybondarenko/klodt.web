@@ -17,7 +17,7 @@ page: collection
                   <div class="gallery-image">
                     <div class="gallery-image__images">
                       {% for image in page.images %}
-                      <div class="gallery-image__image"><img src="{{image.album}}"/></div>
+                      <a class="gallery-image__image" href="{{ image.album }}"><img src="{{image.album}}"/></a>
                       {% endfor %}
                     </div>
                     <div class="gallery-image__arrows"><a href="#arrow-left" class="gallery-image__arrow-left"></a><a href="#arrow-right" class="gallery-image__arrow-right"></a></div>

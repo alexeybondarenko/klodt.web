@@ -1,4 +1,5 @@
 //=include lib/jquery.js
+//=include lib/jquery.chocolat.js
 //=include lib/slick.js
 
 console.log('App is running')
@@ -47,17 +48,6 @@ $(document).ready(function () {
   })
 
   $('.gallery').each(function () {
-    $(this).find('.gallery__items').slick({
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      dots: true,
-      arrows: false,
-      // appendDots: $(this).find('.slider__dots')
-    });
-  })
-
-  $('.gallery').each(function () {
     var $this = $(this)
     var $previews = $(this).find('.gallery-previews .gallery-previews__item')
     var $sliderIndicators = $(this).find('.gallery__slider-indicator')
@@ -65,6 +55,10 @@ $(document).ready(function () {
     var slickInstance = $this.find('.gallery-image__images').slick({
       infinite: true,
       arrows: false,
+    })
+    $(this).Chocolat({
+      imageSelector: '.gallery-image__image:not(.slick-cloned)',
+      imageSize: 'contain'
     })
     $(this).find('.gallery-image__arrow-left').on('click', function () {
       slickInstance.slick('slickPrev')

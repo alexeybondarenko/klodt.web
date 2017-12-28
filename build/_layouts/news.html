@@ -50,7 +50,7 @@ page: news
                     <div class="gallery-image">
                       <div class="gallery-image__images">
                         {% for image in page.images %}
-                        <div class="gallery-image__image"><img src="{{image}}"/></div>
+                        <a href="{{image}}" class="gallery-image__image"><img src="{{image}}"/></a>
                         {% endfor %}
                       </div>
                       <div class="gallery-image__arrows gallery-image__arrows_outside gallery-image__arrows_thin">
