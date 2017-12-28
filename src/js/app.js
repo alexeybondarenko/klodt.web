@@ -77,4 +77,36 @@ $(document).ready(function () {
     })
     slickInstance.slick('slickGoTo', 0)
   })
+
+  const INSTAGRAM_NAME = 'oa_london'
+  function addImages(element, images = []) {
+    images.forEach((image) => {
+      const link = document.createElement('a')
+      const img = document.createElement('img')
+      const inner = document.createElement('span')
+
+      img.src = image.thumbnail_resources[0].src;
+      img.alt = image.caption
+
+      link.href = `https://instagram.com/p/${image.code}`
+      link.rel = "noreferrer nofollow"
+      link.target = "__blank"
+
+      inner.classList.add('instagram-widget__in')
+
+      inner.appendChild(img)
+      link.appendChild(inner)
+
+      element.append(link)
+    })
+  }
+
+  $.get(`https://www.instagram.com/${INSTAGRAM_NAME}/?__a=1`)
+  .then((resp) => {
+    const images = resp.user.media.nodes.slice(0, 4);
+    $('.js-instagram-widget').each(function () {
+      addImages($(this), images)
+    })
+  })
+
 })
