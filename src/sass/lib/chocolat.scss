@@ -214,7 +214,7 @@ body.chocolat-open > .chocolat-content {
     display: none !important;
 
     +minTablet {
-      display: block;
+      display: block !important;
     }
   }
 }
