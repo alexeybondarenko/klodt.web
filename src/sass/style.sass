@@ -2,6 +2,7 @@
 @import ./lib/grid
 @import ./lib/reset
 @import ./lib/svgfont
+@import ./lib/chocolat
 
 +font('Quasimoda', 'Quasimoda-Regular', 400)
 +font('Quasimoda', 'Quasimoda-Italic', 400, italic)
@@ -172,6 +173,7 @@ body
 @import ./components/slider
 @import ./components/footer
 @import ./components/with-signature
+@import ./components/sections
 
 .text-title
   +tenor
@@ -227,9 +229,20 @@ body
       &::before
         display: none
 
+.instagram-widget
+  a
+    display: inline-block
+    width: 50%
+  &__in
+    display: inline-block
+    padding: 3px
+
 @import ./blocks/index
 @import ./blocks/quotation-block
 @import ./blocks/collection-page
 @import ./blocks/card-page
 @import ./blocks/contact-page
 @import ./blocks/about-page
+@import ./blocks/news-list-page
+@import ./blocks/news-page
+@import ./blocks/materials-list-page

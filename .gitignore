@@ -6,3 +6,4 @@ build/css
 node_modules
 _site
 build/.jekyll-metadata
+build/icons.html

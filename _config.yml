@@ -9,6 +9,10 @@ collections:
     title: Categories
     output: true
     permalink: /:collection/:name/
+  news:
+    title: News
+    output: true
+    permalink: /:collection/:name/
 defaults:
 - scope:
     path: ''
@@ -20,3 +24,8 @@ defaults:
     type: categories
   values:
     layout: category
+- scope:
+    path: ''
+    type: news
+  values:
+    layout: news

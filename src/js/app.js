@@ -1,4 +1,5 @@
 //=include lib/jquery.js
+//=include lib/jquery.chocolat.js
 //=include lib/slick.js
 
 console.log('App is running')
@@ -49,9 +50,15 @@ $(document).ready(function () {
   $('.gallery').each(function () {
     var $this = $(this)
     var $previews = $(this).find('.gallery-previews .gallery-previews__item')
+    var $sliderIndicators = $(this).find('.gallery__slider-indicator')
+    var $items = $(this).find('.gallery-image__image')
     var slickInstance = $this.find('.gallery-image__images').slick({
       infinite: true,
       arrows: false,
+    })
+    $(this).Chocolat({
+      imageSelector: '.gallery-image__image:not(.slick-cloned)',
+      imageSize: 'contain'
     })
     $(this).find('.gallery-image__arrow-left').on('click', function () {
       slickInstance.slick('slickPrev')
@@ -62,6 +69,7 @@ $(document).ready(function () {
     slickInstance.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       $previews.removeClass('active')
       $previews.eq(nextSlide).addClass('active')
+      $sliderIndicators.text(`${nextSlide + 1}/${$items.length}`)
     })
     $previews.on('click', function () {
       var index = $previews.index(this)
@@ -69,4 +77,36 @@ $(document).ready(function () {
     })
     slickInstance.slick('slickGoTo', 0)
   })
+
+  const INSTAGRAM_NAME = 'oa_london'
+  function addImages(element, images = []) {
+    images.forEach((image) => {
+      const link = document.createElement('a')
+      const img = document.createElement('img')
+      const inner = document.createElement('span')
+
+      img.src = image.thumbnail_resources[0].src;
+      img.alt = image.caption
+
+      link.href = `https://instagram.com/p/${image.code}`
+      link.rel = "noreferrer nofollow"
+      link.target = "__blank"
+
+      inner.classList.add('instagram-widget__in')
+
+      inner.appendChild(img)
+      link.appendChild(inner)
+
+      element.append(link)
+    })
+  }
+
+  $.get(`https://www.instagram.com/${INSTAGRAM_NAME}/?__a=1`)
+  .then((resp) => {
+    const images = resp.user.media.nodes.slice(0, 4);
+    $('.js-instagram-widget').each(function () {
+      addImages($(this), images)
+    })
+  })
+
 })

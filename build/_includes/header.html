@@ -25,11 +25,17 @@
                 <div class="nav__item {% if (page.page == 'about' or layout.page == 'about') %} nav__item_active {% endif %}">
                   <a href="/about.html">About</a>
                 </div>
-              </div>
-              <div class="nav__right">
                 <div class="nav__item {% if (page.page == 'collection' or layout.page == 'collection') %} nav__item_active {% endif %} nav__item_with-submenu">
                   <a href="/categories/all">Collection</a>
                   {% include collection-submenu.html %}
+                </div>
+              </div>
+              <div class="nav__right">
+                <div class="nav__item {% if (page.page == 'materials' or layout.page == 'materials') %} nav__item_active {% endif %}">
+                  <a href="/materials.html">Materials</a>
+                </div>
+                <div class="nav__item {% if (page.page == 'news' or layout.page == 'news') %} nav__item_active {% endif %}">
+                  <a href="/news.html">News</a>
                 </div>
                 <div class="nav__item {% if (page.page == 'contact' or layout.page == 'contact') %} nav__item_active {% endif %}">
                   <a href="/contact.html">Contact</a>

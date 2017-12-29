@@ -68,6 +68,43 @@ gulp.task('build:jekyll', (cb) => (
     .on('close', cb)
 ));
 
+const fontName = 'svgfont'
+gulp.task('build:font', function(){
+  return gulp.src('./src/img/svg/icons/*.svg')
+  // .pipe(svgmin())
+    .pipe($.iconfont({
+      fontName: fontName,
+      appendUnicode: true,
+      formats: ['ttf', 'eot', 'woff', 'woff2'],
+      normalize: true,
+      fontHeight: 1001,
+      fontStyle: 'normal',
+      fontWeight: 'normal'
+    }))
+    .on('glyphs', function(glyphs, options) {
+      gulp.src('./gulp/helpers/_svgfont.sass')
+        .pipe($.consolidate('lodash', {
+          glyphs: glyphs,
+          fontName: fontName,
+          fontPath: '../fonts/',
+          className: 'icon'
+        }))
+        .pipe(gulp.dest('./src/sass/lib/'));
+      gulp.src('./gulp/helpers/icons.html')
+        .pipe($.consolidate('lodash', {
+          glyphs: glyphs,
+          fontName: fontName,
+          fontPath: '../fonts/',
+          className: 'icon',
+          htmlBefore: '<i class="icon ',
+          htmlAfter: '"></i>',
+          htmlBr: ''
+        }))
+        .pipe(gulp.dest('./build'));
+    })
+    .pipe(gulp.dest('./src/fonts/'))
+});
+
 gulp.task('serve', () => (
   cp.spawn('jekyll', ['serve', '--incremental'], { stdio: 'inherit' }) // Adding incremental reduces build time.
     .on('error', (error) => $.util.log($.util.colors.red(error.message)))
