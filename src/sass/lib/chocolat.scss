@@ -211,10 +211,11 @@ body.chocolat-open > .chocolat-content {
 .chocolat-wrapper {
   .chocolat-right,
   .chocolat-left {
-    display: none !important;
 
-    +minTablet {
-      display: block !important;
+    &.active {
+      @include maxTablet {
+        display: none !important;
+      }
     }
   }
 }
