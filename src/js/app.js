@@ -78,12 +78,13 @@ $(document).ready(function () {
     slickInstance.slick('slickGoTo', 0)
   })
 
-  const INSTAGRAM_NAME = 'oa_london'
-  function addImages(element, images = []) {
-    images.forEach((image) => {
-      const link = document.createElement('a')
-      const img = document.createElement('img')
-      const inner = document.createElement('span')
+  var INSTAGRAM_NAME = 'oa_london'
+  function addImages(element, images) {
+    images = images || []
+    images.forEach(function (image) {
+      var link = document.createElement('a')
+      var img = document.createElement('img')
+      var inner = document.createElement('span')
 
       img.src = image.thumbnail_resources[0].src;
       img.alt = image.caption
@@ -102,8 +103,8 @@ $(document).ready(function () {
   }
 
   $.get(`https://www.instagram.com/${INSTAGRAM_NAME}/?__a=1`)
-  .then((resp) => {
-    const images = resp.user.media.nodes.slice(0, 4);
+  .then(function(resp) {
+    var images = resp.user.media.nodes.slice(0, 4);
     $('.js-instagram-widget').each(function () {
       addImages($(this), images)
     })
